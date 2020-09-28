@@ -18,7 +18,6 @@ const useStyles = makeStyles({
 });
 
 function TwitterPost({info}) {
-  console.log(info)
   const classes = useStyles();
 
   return (

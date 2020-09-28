@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import LoginModal from './LoginModal'
+import { Link } from 'react-router-dom'
+import './Nav.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +34,14 @@ function Nav() {
           <Typography variant="h6" className={classes.title}>
             News
           </Typography>
-          <LoginModal />
+          <Link className="RemoveHyperlink" to="/register">
+            <Button color="inherit">
+              Register
+            </Button>
+          </Link>
+          <Button color="inherit">
+            Logout
+        </Button>
         </Toolbar>
       </AppBar>
     </div>

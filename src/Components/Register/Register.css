@@ -1,0 +1,8 @@
+.BgImg {
+    background-Image: url("https://www.we-heart.com/upload-images/habitat1964paris7.jpg");
+    background-size: cover;
+}
+.RemoveHyperlink{
+    text-decoration: none;
+    color: white;
+}
