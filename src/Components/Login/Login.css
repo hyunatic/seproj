@@ -1,6 +1,8 @@
-.BgImg {
-    background-Image: url("https://www.we-heart.com/upload-images/habitat1964paris7.jpg");
-    background-size: cover;
+.Center{
+    width: fit-content;
+    height: fit-content;
+    padding-top: 15%;
+    margin: auto;
 }
 .CardHeight{
     z-index: 2;
