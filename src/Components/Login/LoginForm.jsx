@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import './Login.css'
-import { Link } from 'react-router-dom'
+import Nav from '../NavBar/Nav';
 
 export default class LoginForm extends Component {
     state = {
@@ -23,7 +23,10 @@ export default class LoginForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <Card className="BgImg">
+                <Nav />
+                <br />
+                <div class="Center">
+                <Card >
                     <CardContent>
                         <Grid container direction="row" justify="center" alignItems="center">
                             <form noValidate autoComplete="off">
@@ -35,18 +38,14 @@ export default class LoginForm extends Component {
                                     <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
                                 </Grid>
                                 <br />
-                                <Grid container xs={12}>
-                                    <Grid item xs={6}>
-                                        <Button onClick={this.onSubmit} variant="contained">Login</Button>
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <Link className="RemoveHyperlink" to="/register"><Button variant="contained">Register</Button></Link>
-                                    </Grid>
+                                <Grid>
+                                    <Button onClick={this.onSubmit} variant="contained">Login</Button>
                                 </Grid>
                             </form>
                         </Grid>
                     </CardContent>
                 </Card>
+                </div>
             </React.Fragment>
         )
     }

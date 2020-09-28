@@ -5,6 +5,7 @@ import LoginForm from './Components/Login/LoginForm';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import RegisterForm from './Components/Register/RegisterForm'
 import HomePage from './Components/HomePage/HomePage';
+import "./index.css"
 
 function App() {
   const hello = () => {

@@ -22,7 +22,8 @@ export default class RegisterForm extends Component {
     }
     render() {
         return (
-            <Card className="BgImg">
+            <div class="Center">
+            <Card>
                 <CardContent>
                     <Grid container direction="row" justify="center" >
                         <form noValidate autoComplete="off">
@@ -34,11 +35,11 @@ export default class RegisterForm extends Component {
                                 <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
                             </Grid>
                             <br />
-                            <Grid container xs={12}>
-                                <Grid item xs={6}>
+                            <Grid container direction="row" justify="center" alignItems="center">
+                                <Grid xs={6}>
                                     <Button onClick={this.onSubmit} variant="contained">Login</Button>
                                 </Grid>
-                                <Grid item xs={6}>
+                                <Grid>
                                     <Link className="RemoveHyperlink" to="/"><Button variant="contained">Back</Button></Link>
                                 </Grid>
                             </Grid>
@@ -46,6 +47,7 @@ export default class RegisterForm extends Component {
                     </Grid>
                 </CardContent>
             </Card>
+            </div>
         )
     }
 }
