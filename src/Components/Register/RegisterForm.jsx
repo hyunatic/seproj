@@ -28,7 +28,7 @@ export default class RegisterForm extends Component {
                     <Grid container direction="row" justify="center" >
                         <form noValidate autoComplete="off">
                             <Grid item xs={12}>
-                                <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="whiote" label="Username" />
+                                <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" label="Username" />
                             </Grid>
                             <br />
                             <Grid item xs={12}>
@@ -37,7 +37,7 @@ export default class RegisterForm extends Component {
                             <br />
                             <Grid container direction="row" justify="center" alignItems="center">
                                 <Grid xs={6}>
-                                    <Button onClick={this.onSubmit} variant="contained">Login</Button>
+                                    <Button color="primary" onClick={this.onSubmit} variant="contained">Login</Button>
                                 </Grid>
                                 <Grid>
                                     <Link className="RemoveHyperlink" to="/"><Button variant="contained">Back</Button></Link>
