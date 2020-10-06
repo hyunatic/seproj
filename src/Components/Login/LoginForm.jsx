@@ -5,18 +5,34 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { Link } from 'react-router-dom'
-import Nav from '../NavBar/Nav.jsx'
+import { checkLogin } from '../../Redux/Actions/AuthAction'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import './Login.css';
 import Logo from './Icon.png'; //need to fix link to get from src/img/icon.png
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
     state = {
         username: '',
-        password: ''
+        password: '',
+        status: ''
     }
-    onSubmit = () => {
-        alert('test')
+    onSubmit = (e) => {
+        e.preventDefault();
+        
+        const post = {
+            username : this.state.username,
+            password : this.state.password
+        };
+        this.props.checkLogin(post); 
     }
+
+    componentWillReceiveProps(nextProps){
+        var status = nextProps.loginstatus.Result;
+        if(status == 0)
+            alert("User does not exist")
+    }
+
     handleChange = (e) => {
         this.setState({
             [e.target.id]: e.target.value
@@ -69,3 +85,14 @@ export default class LoginForm extends Component {
         )
     }
 }
+
+LoginForm.propTypes = {
+    checkLogin: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+    loginstatus: state.auth.status
+});
+
+
+export default connect(mapStateToProps, { checkLogin })(LoginForm)
