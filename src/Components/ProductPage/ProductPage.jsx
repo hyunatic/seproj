@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import PrimarySearchAppBar from '../DatetimePage/datetimepage';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,6 +41,11 @@ export default function ComplexGrid() {
 
   return (
     <div className={classes.root}>
+      <Grid container>
+        <Grid xs={12}>
+          <PrimarySearchAppBar />              
+        </Grid>                               
+      </Grid>
       <Paper className={classes.paper}>
         <Grid container spacing={2} >
           <Grid item>
