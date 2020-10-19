@@ -5,6 +5,8 @@ import LoginForm from './Components/Login/LoginForm';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import RegisterForm from './Components/Register/RegisterForm'
 import HomePage from './Components/HomePage/HomePage';
+import ProductPage from './Components/ProductPage/ProductPage';
+import DatetimePage from  './Components/DatetimePage/datetimepage'
 import "./index.css"
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
             <Route exact path="/" component={LoginForm}/>
             <Route exact path="/register" component={RegisterForm}/>
             <Route exact path="/home" component={HomePage}/>
+            <Route exact path="/productpage" component={ProductPage}/>
+            <Route exact path="/datetimepage" component={DatetimePage}/>
           </Switch>
         </div>
       </BrowserRouter>
