@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import './Register.css'
 import { Link } from 'react-router-dom'
 
-import Logo from '../img/icon.png'; //need to fix link to get from src/img/icon.png
+import Logo from '../../img/icon.png'; //need to fix link to get from src/img/icon.png
 
 export default class RegisterForm extends Component {
     state = {
