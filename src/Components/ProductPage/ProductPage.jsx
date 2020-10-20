@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default class RegisterForm extends Component {
+export default class ProductPage extends Component {
   render(){
     useStyles();
     return (
