@@ -9,7 +9,7 @@ import { checkLogin } from '../../Redux/Actions/AuthAction'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Login.css';
-import Logo from './Icon.png'; //need to fix link to get from src/img/icon.png
+import Logo from '../../img/icon.png'; //need to fix link to get from src/img/icon.png
 
 
 class LoginForm extends Component {
@@ -33,6 +33,7 @@ class LoginForm extends Component {
     componentWillReceiveProps(nextProps){
         var status = nextProps.loginstatus.Result
         if(status == 1){
+            localStorage.setItem('username', this.state.username);
             this.props.history.push('/home');
         }
         else{
@@ -50,7 +51,7 @@ class LoginForm extends Component {
         var visibilityState = this.state.error ? "visible" : "hidden";
         return (
             <React.Fragment>
-                <div class= "Login">    
+                <div class="Login">    
                 <Card>
                     <CardContent>
                         <Grid container direction="row" justify="center" alignItems="center">
@@ -58,17 +59,19 @@ class LoginForm extends Component {
                                 <Grid>
                                     <img src={Logo} />
                                 </Grid>
-                                <Grid>
-                                    <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="whiote" label="Username" />
+                                <Grid item xs={12}>
+                                    <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" label="Username" />
                                 </Grid>
                                 <br />
-                                <Grid>
+                                <Grid item xs={12}>
                                     <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
                                 </Grid>
                                 <br />
-                                <p style={{visibility: visibilityState}}>Wrong Username or Password</p>
+                                <p style={{visibility: visibilityState, color: "red"}}>Wrong Username or Password</p>
                                 <Grid container item alignitem="center" justify="center">
+                                <Grid xs={6}>
                                     <Button onClick={this.onSubmit} variant="contained" color="primary">Login</Button>
+                                </Grid>
                                 </Grid>
                                 <br/><br/>
                                 <Grid container item alignitem="center" justify="center">
@@ -82,7 +85,7 @@ class LoginForm extends Component {
                 <div class="Bottom">
                     <Card>
                         <CardContent>
-                            <Grid container item alignitem="center" justify="center">
+                            <Grid container item direction="row" alignitem="center" justify="center">
                                 Don't have an account? &nbsp;
                                 <Link className ="removeHyperlink" to="/register">
                                 Sign up
