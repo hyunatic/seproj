@@ -1,0 +1,30 @@
+.Center{
+    width: 50%;
+    height: fit-content;
+}
+.middle{
+    width: 60%;
+    height: fit-content;
+    margin-top:5%;
+    margin-left:auto;
+    margin-right: auto;
+}
+.Bottom{
+    width: 30%;
+    height: fit-content;
+    margin-top:1%;
+    margin-left:auto;
+    margin-right: auto;
+}
+.CardHeight{
+    z-index: 2;
+}
+.removeHyperlink{
+    text-decoration: none;
+    color: dodgerblue;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 10%;
+}
