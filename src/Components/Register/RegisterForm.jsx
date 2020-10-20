@@ -7,10 +7,13 @@ import CardContent from '@material-ui/core/CardContent';
 import './Register.css'
 import { Link } from 'react-router-dom'
 
+import Logo from '../img/icon.png'; //need to fix link to get from src/img/icon.png
+
 export default class RegisterForm extends Component {
     state = {
         username: '',
-        password: ''
+        password: '',
+        email: ''
     }
     onSubmit = () => {
         alert('test')
@@ -35,9 +38,13 @@ export default class RegisterForm extends Component {
                                 <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
                             </Grid>
                             <br />
+                            <Grid>
+                                <TextField onChange={this.handleChange} id="email" className="input-text" variant="outlined" color="white" label="Email" />
+                            </Grid>
+                            <br />
                             <Grid container direction="row" justify="center" alignItems="center">
                                 <Grid xs={6}>
-                                    <Button color="primary" onClick={this.onSubmit} variant="contained">Login</Button>
+                                    <Button color="primary" onClick={this.onSubmit} variant="contained">Register</Button>
                                 </Grid>
                                 <Grid>
                                     <Link className="RemoveHyperlink" to="/"><Button variant="contained">Back</Button></Link>
