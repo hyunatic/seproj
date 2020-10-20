@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     paddingBottom: 5
   },
+  card:{
+    paddingBottom: 10,
+    minHeight:370,
+  },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
@@ -83,8 +87,8 @@ export default function ReviewCard() {
       {cardInfo && cardInfo.map(x => {
         return (
           <div className={classes.root}>
-            <Grid item xs={4}>
-            <Card className={classes.root}>
+            <Grid item xs={10} className={classes.card}>
+            <Card className={classes.card} >
               <CardHeader
                 avatar={
                   <Avatar aria-label="recipe" className={classes.avatar}>

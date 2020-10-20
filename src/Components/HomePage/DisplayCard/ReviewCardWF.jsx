@@ -20,7 +20,10 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    paddingBottom: 5
+  },
+  card:{
+    paddingBottom: 10,
+    minHeight:370,
   },
   media: {
     height: 0,
@@ -74,12 +77,12 @@ export default function ReviewCard() {
 
   return (
     <div>
-      <Grid container direction="row" justify="center" alignItems="center">
+      <Grid container direction="row" justify="center" alignItems="center" height='75%'>
       {cardInfo && cardInfo.map(x => {
         return (
           <div>
-            <Grid item xs={10}>
-            <Card className={classes.root}>
+            <Grid item xs={10} className={classes.card}>
+            <Card className={classes.card} >
               <CardHeader
                 avatar={
                   <Avatar aria-label="recipe" className={classes.avatar}>
