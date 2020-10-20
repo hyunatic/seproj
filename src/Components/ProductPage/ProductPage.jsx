@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import PrimarySearchAppBar from '../DateTimePage/datetimepage';
+import PrimarySearchAppBar from '../DateTimePage/DateTimePage';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +34,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+<<<<<<< HEAD
 export default class ProductPage extends Component {
+=======
+class ProductPage extends Component {
+  componentWillReceiveProps(nextProps){
+    useStyles();
+  }
+>>>>>>> 82b683e75694e3f6f1cbb04268ad7361b92556f8
   render(){
     useStyles();
     return (
@@ -86,3 +93,4 @@ export default class ProductPage extends Component {
     );
   }
 }
+export default ProductPage

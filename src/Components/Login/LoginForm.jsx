@@ -11,11 +11,13 @@ import PropTypes from 'prop-types'
 import './Login.css';
 import Logo from './Icon.png'; //need to fix link to get from src/img/icon.png
 
+
 class LoginForm extends Component {
     state = {
         username: '',
         password: '',
-        status: ''
+        status: '',
+        error: false
     }
     onSubmit = (e) => {
         e.preventDefault();
@@ -25,12 +27,18 @@ class LoginForm extends Component {
             password : this.state.password
         };
         this.props.checkLogin(post); 
+        
     }
 
     componentWillReceiveProps(nextProps){
-        var status = nextProps.loginstatus.Result;
-        if(status == 0)
-            alert("User does not exist")
+        var status = nextProps.loginstatus.Result
+        if(status == 1){
+            this.props.history.push('/home');
+        }
+        else{
+            this.setState({error : true})
+        }
+            
     }
 
     handleChange = (e) => {
@@ -39,6 +47,7 @@ class LoginForm extends Component {
         })
     }
     render() {
+        var visibilityState = this.state.error ? "visible" : "hidden";
         return (
             <React.Fragment>
                 <div class= "Login">    
@@ -57,6 +66,7 @@ class LoginForm extends Component {
                                     <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
                                 </Grid>
                                 <br />
+                                <p style={{visibility: visibilityState}}>Wrong Username or Password</p>
                                 <Grid container item alignitem="center" justify="center">
                                     <Button onClick={this.onSubmit} variant="contained" color="primary">Login</Button>
                                 </Grid>

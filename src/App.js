@@ -6,13 +6,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import RegisterForm from './Components/Register/RegisterForm'
 import HomePage from './Components/HomePage/HomePage';
 import ProductPage from './Components/ProductPage/ProductPage';
-import DatetimePage from  './Components/DatetimePage/datetimepage'
+import DatetimePage from  './Components/DateTimePage/DateTimePage'
 import "./index.css"
 
 function App() {
-  const hello = () => {
-    alert()
-  }
   return (
     <Provider store={Store}>
       <BrowserRouter>
