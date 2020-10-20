@@ -22,7 +22,7 @@ class RegisterForm extends Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        if(this.state.username == "" || this.state.password == "" || this.state.email == ""){
+        if(this.state.username === "" || this.state.password === "" || this.state.email === ""){
             alert("Username / email / password cannot be blank")
         }
         else{
@@ -38,7 +38,7 @@ class RegisterForm extends Component {
     componentWillReceiveProps(nextProps){
         // Need to do validation
         //console.log(nextProps.registerstatus)
-        var status = nextProps.registerstatus
+        //var status = nextProps.registerstatus
         this.props.history.push('/');
     }
     handleChange = (e) => {
@@ -57,7 +57,7 @@ class RegisterForm extends Component {
                     <Grid container direction="row" justify="center" >
                         <form noValidate autoComplete="off">
                                 <Grid>
-                                    <img src={Logo} />
+                                    <img src={Logo} alt="none"/>
                                 </Grid>
                             <Grid item xs={12}>
                                 <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" label="Username" />

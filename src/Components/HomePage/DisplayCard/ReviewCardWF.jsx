@@ -12,10 +12,11 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Grid from '@material-ui/core/Grid';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,12 +47,16 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ReviewCard() {
+  const history = useHistory();
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  const Order = () => {
+    history.push('/map')
+  }
   const cardInfo = [
     {
       image: "https://rukminim1.flixcart.com/image/352/352/jxkpx8w0/hair-accessory/n/z/h/multi-coloured-baby-girl-hairband-headbands-rabbit-ear-3-rabbit-original-imafhvwdwgvh5tak.jpeg?q=70",
@@ -112,7 +117,7 @@ export default function ReviewCard() {
                   <FavoriteIcon />
                 </IconButton>
                 <IconButton aria-label="share">
-                  <ShareIcon />
+                  <ArrowForwardIcon onClick={Order}/>
                 </IconButton>
                 <IconButton
                   className={clsx(classes.expand, {

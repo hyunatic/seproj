@@ -28,7 +28,7 @@ class Donate extends Component {
     }
     componentWillReceiveProps(nextProps){
         //Return
-        var status = nextProps.donationpoststatus;
+        //var status = nextProps.donationpoststatus;
     }
     handleChange = (e) => {
         this.setState({

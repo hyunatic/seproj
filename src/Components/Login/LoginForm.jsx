@@ -31,7 +31,7 @@ class LoginForm extends Component {
 
     componentWillReceiveProps(nextProps){
         var status = nextProps.loginstatus.Result
-        if(status == 1){
+        if(status === 1){
             localStorage.setItem('username', this.state.username);
             this.props.history.push('/home');
         }
@@ -55,7 +55,7 @@ class LoginForm extends Component {
                         <Grid container direction="row" justify="center" alignItems="center">
                             <form noValidate autoComplete="off">
                                 <Grid>
-                                    <img src={Logo} />
+                                    <img src={Logo} alt=""/>
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" label="Username" />

@@ -12,10 +12,11 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Grid from '@material-ui/core/Grid';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,8 +48,12 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ReviewCard() {
+  const history = useHistory();
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const Order = () => {
+    history.push('/map')
+  }
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -114,7 +119,7 @@ export default function ReviewCard() {
                   <FavoriteIcon />
                 </IconButton>
                 <IconButton aria-label="share">
-                  <ShareIcon />
+                  <ArrowForwardIcon onClick={Order}/>
                 </IconButton>
                 <IconButton
                   className={clsx(classes.expand, {
