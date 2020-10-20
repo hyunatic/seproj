@@ -7,18 +7,39 @@ import CardContent from '@material-ui/core/CardContent';
 import './Register.css'
 import { Link } from 'react-router-dom'
 import Checkbox from '@material-ui/core/Checkbox';
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { registerUser } from '../../Redux/Actions/AuthAction'
 
 import Logo from '../../img/icon.png'; //need to fix link to get from src/img/icon.png
 
-export default class RegisterForm extends Component {
+class RegisterForm extends Component {
     state = {
         username: '',
         password: '',
         email: '',
         buttondisabled: true
     }
-    onSubmit = () => {
-        alert('test')
+    onSubmit = (e) => {
+        e.preventDefault();
+        if(this.state.username == "" || this.state.password == "" || this.state.email == ""){
+            alert("Username / email / password cannot be blank")
+        }
+        else{
+            const post = {
+                username : this.state.username,
+                email: this.state.email,
+                password : this.state.password
+                
+            };
+            this.props.registerUser(post);
+        }
+    }
+    componentWillReceiveProps(nextProps){
+        // Need to do validation
+        //console.log(nextProps.registerstatus)
+        var status = nextProps.registerstatus
+        this.props.history.push('/');
     }
     handleChange = (e) => {
         this.setState({
@@ -70,3 +91,13 @@ export default class RegisterForm extends Component {
         )
     }
 }
+
+RegisterForm.propTypes = {
+    RegisterStatus: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+    registerstatus: state.auth.registerstatus
+});
+
+export default connect(mapStateToProps, { registerUser })(RegisterForm)

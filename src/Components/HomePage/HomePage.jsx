@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Category from './Category/Category'
 import SearchBar from './SearchBar/SearchBar'
 import Grid from '@material-ui/core/Grid';
-import PrimarySearchAppBar from '../AppBar/appbar';
+import PrimarySearchAppBar from '../AppBar/Appbar';
 
 class HomePage extends Component {
     render() {

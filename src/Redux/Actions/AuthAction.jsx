@@ -13,3 +13,19 @@ export const checkLogin = (postData) => dispatch => {
         })
         );
 }
+export const registerUser = (postData) => dispatch => {
+   
+    fetch('https://ntuseproj.herokuapp.com/api/create_User', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(postData)
+    })
+        .then(res => res.json())
+        .then(data => dispatch({
+            type: 'REGISTER_USER',
+            payload: data
+        })
+        );
+}

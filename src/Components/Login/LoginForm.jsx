@@ -21,7 +21,6 @@ class LoginForm extends Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        
         const post = {
             username : this.state.username,
             password : this.state.password
@@ -39,7 +38,6 @@ class LoginForm extends Component {
         else{
             this.setState({error : true})
         }
-            
     }
 
     handleChange = (e) => {

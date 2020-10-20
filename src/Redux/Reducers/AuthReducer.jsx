@@ -1,5 +1,6 @@
 const initState = {
-    status: []
+    status: [],
+    registerstatus:[]
 };
 
 const AuthReducers = (state = initState, action) => {
@@ -8,6 +9,11 @@ const AuthReducers = (state = initState, action) => {
             return{
                 ...state,
                 status: action.payload
+            }
+        case 'REGISTER_USER':
+            return{
+                ...state,
+                registerstatus: action.payload
             }
         default:
             return state;

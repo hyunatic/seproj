@@ -16,10 +16,10 @@ function App() {
         <div className="App">
           <Switch>
             <Route exact path="/" component={LoginForm}/>
-            <Route exact path="/register" component={RegisterForm}/>
-            <Route exact path="/home" component={RegisterForm}/>
+            <Route path="/register" component={RegisterForm}/>
+            <Route path="/home" component={HomePage}/>
             {/* <Route exact path="/datetimepage" component={DatetimePage}/> */}
-            <Route exact path="/donate" component={Donate}/>
+            <Route path="/donate" component={Donate}/>
           </Switch>
         </div>
       </BrowserRouter>

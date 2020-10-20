@@ -14,7 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import AddIcon from '@material-ui/icons/Add';
 import { Link } from 'react-router-dom';
-
+import { useHistory } from "react-router-dom";
+import './Appbar.css'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -89,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  const history = useHistory();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -113,6 +115,11 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const Logout = () => {
+    localStorage.removeItem('username');
+    history.push('/')
+  }
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -125,7 +132,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={Logout}>Logout</MenuItem>
     </Menu>
     
   );
@@ -151,6 +158,17 @@ export default function PrimarySearchAppBar() {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
+      </MenuItem>
+      <MenuItem onClick={Logout}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Logout</p>
       </MenuItem>
     </Menu>
   );
@@ -186,7 +204,7 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <div className={classes.padds}>
-            <Link className={classes.removeHyperlink} to="/donate"><IconButton color="inherit" aria-label="add">
+            <Link className="removeHyperlink" to="/donate"><IconButton color="inherit" aria-label="add">
               <AddIcon />
             </IconButton>
             </Link>
@@ -205,7 +223,7 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.sectionMobile}>
             <div className={classes.padds}>
-            <Link className={classes.removeHyperlink} to="/donate"><IconButton to="/donate" color="inherit" aria-label="add">
+            <Link className="removeHyperlink" to="/donate"><IconButton to="/donate" color="inherit" aria-label="add">
               <AddIcon />
             </IconButton>
             </Link>
