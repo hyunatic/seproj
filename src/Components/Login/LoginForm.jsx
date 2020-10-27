@@ -26,7 +26,6 @@ class LoginForm extends Component {
             password : this.state.password
         };
         this.props.checkLogin(post); 
-        
     }
 
     componentWillReceiveProps(nextProps){
