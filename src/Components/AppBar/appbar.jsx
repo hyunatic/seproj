@@ -130,8 +130,9 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={Logout}>Logout</MenuItem>
+      <Link className="removeHyperlinkB" to="/profile"><MenuItem>Profile</MenuItem></Link>
+      <Link className="removeHyperlinkB" to="/editpost" ><MenuItem>Edit My Donations</MenuItem></Link>
+      <MenuItem onClick={Logout}>Logout</MenuItem>  
     </Menu>
     
   );
@@ -147,26 +148,14 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
+      <Link className="removeHyperlinkB" to="/profile">
+        <MenuItem>
+         <AccountCircle />
         <p>Profile</p>
-      </MenuItem>
+        </MenuItem>
+      </Link>
+      <Link className="removeHyperlinkB" to="/editpost"><MenuItem>Edit My Donations</MenuItem></Link>
       <MenuItem onClick={Logout}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
         <p>Logout</p>
       </MenuItem>
     </Menu>
@@ -200,7 +189,6 @@ export default function PrimarySearchAppBar() {
             </IconButton>
             </Link>
             </div>
-
             <IconButton
               edge="end"
               aria-label="account of current user"
