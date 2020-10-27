@@ -1,0 +1,166 @@
+[ {
+      name: "Weijian",
+      image: "https://newairfryers.com/content/images/size/w2000/2020/01/61Vm8uZfu4L._AC_SL1000_-1.jpg",
+      title: "Airfryer",
+      text: "Used, Condition: 8/10",
+    },
+    {
+      name: "Jolene",
+      image:"https://cdn.shopify.com/s/files/1/2702/1010/products/PP468_fef2ec35-b174-4c0e-8896-894e9a204a18_1200x1200.jpg?v=1602967273",
+      title: "4 Ways Extension Cord",
+      text: "Used, Condition: 7/10",
+    },
+    {
+      name: "Jewel",
+      image: "https://www.courts.com.sg/media/catalog/product/i/p/ip139728_00_1.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
+      title: "Fridge",
+      text: "Used, 110L, school approved",
+    },
+    {
+      name: "Wee",
+      image: "https://img-us1.asus.com/A/show/AW000706/2020/0207/AM0000008/202002AM070000008_15810244138599720019896.jpg",
+      title: "Asus router",
+      text: "New for 4 years, suitable for school used and gaming",
+    },
+	
+	 {
+      image: "https://www.ikea.com/sg/en/images/products/flisat-childrens-stool__0727952_PE735964_S5.JPG",
+      title: "Stool",
+      text: "Used, Condition: 8/10",
+    },
+    {
+      image:"https://images-na.ssl-images-amazon.com/images/I/91Oy8v4fcxL._AC_SL1500_.jpg",
+      title: "Bedside table",
+      text: "Used, Condition: 7/10",
+    },
+    {
+      image: "https://pyxis.nymag.com/v1/imgs/de6/c3e/919b5ae4a4442ce6416b341e47f7cbdb51.rdeep-vertical.w245.jpg",
+      title: "Small bedtime lamp",
+      text: "Used, Condition: White frame has turned slightly yellow",
+    },
+    {
+      image: "https://www.ikea.com/sg/en/images/products/tjusig-shoe-rack-black__0710715_PE727750_S5.JPG?f=xs",
+      title: "Shoe rack",
+      text: "Used, fits 12 pairs of shoes",
+    },
+{
+      image: "https://m.media-amazon.com/images/I/51ecW0uUqrL.jpg",
+      title: "Samyang instant noodles",
+      text: "3x Samyang individual packs",
+    },
+    {
+      image:"https://www.homenoffice.sg/image/cache/data/Product%20Pictures/009039-1000x1000.jpg",
+      title: "Nescafe 3-in-1 coffee",
+      text: "Opened, 18 sachets left",
+    },
+    {
+      image: "https://www.wangwang.sg/wp-content/uploads/2019/08/Pokka-oolong-500ml.jpg",
+      title: "Oolong tea bottled drink",
+      text: "18x 500ml bottles",
+    },
+    {
+      image: "https://www.cellarbration.com.sg/content/images/thumbs/0002713_carlsberg-green-label-beer-can-24-x-320ml.jpeg",
+      title: "Carlsberg",
+      text: "10x 350ml cans",
+    },
+{
+      image: "https://rehabshop.com.sg/image/cache/catalog/product/Zappy%20Alcohol%20Wipe-1000x1000.jpg",
+      title: "Zappy wipes",
+      text: "34x 1 piece Alcohol wipes",
+    },
+    {
+      image:"https://smhttp-ssl-20535-live.nexcesscdn.net/media/catalog/product/cache/30a903ea000a9e1b372518e5a6ce2123/j/c/jc-cwf-ea_6.jpg",
+      title: "Clorox wipes",
+      text: "Used with remaining of half roll",
+    },
+    {
+      image: "https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/32227_LXL1.jpg",
+      title: "Darlie Toothpaste",
+      text: "New",
+    },
+    {
+      image: "https://www.koreadepart.com/data/item/1505891486_l1",
+      title: "The Face Shop facial mask",
+      text: "5x blueberry face mask",
+    },
+{
+      image: "https://cdn11.bigcommerce.com/s-knrdocushe/images/stencil/1280x1280/products/11931/21552/4801234108038__24180.1573635984.jpg?c=2",
+      title: "Baygon multi insect killer",
+      text: "Used, at least half bottle left",
+    },
+    {
+      image:"https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/13076252_XL1.jpg",
+      title: "Detergent Dynamo",
+      text: "Used, half bottle remaining",
+    },
+    {
+      image: "https://www.waangoo.com/content/images/thumbs/0016958_leopard-6-gallon-pail-bucket_600.jpeg",
+      title: "Pail",
+      text: "Used previously for floor wiping",
+    },
+    {
+      image: "https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/13020660_XL1.jpg",
+      title: "Magiclean mop",
+      text: "Used, comes with 1x paper refill",
+    },
+ {
+      image: "https://assets.adidas.com/images/w_600,f_auto,q_auto/da363cc138f945b19850a80e010fa6e2_9366/Adilette_Comfort_Slides_Black_AP9966_01_standard.jpg",
+      title: "Adidas Sliders",
+      text: "Used, Condition: 6/10, Previously used for shower",
+    },
+    {
+      image:"https://cache.net-a-porter.com/images/products/1212990/1212990_fr_2000_q80.jpg",
+      title: "Gold Frame Lenless spectacles",
+      text: "New",
+    },
+    {
+      image: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/45dcf42f193040e88c2aaa8d00e01770_9366/4ATHLTS_Duffel_Bag_Small_Black_FJ9353_01_standard.jpg",
+      title: "Duffel bag suited for daily use",
+      text: "Used, Condition: 7/10, can be used as a gym bag",
+    },
+    {
+      image: "https://d15udtvdbbfasl.cloudfront.net/catalog/product/large_image/63_172047.jpg",
+      title: "Denim Shorts",
+      text: "Pre-loved item, Size 36",
+    },
+  {
+      image: "https://media.karousell.com/media/photos/products/2018/08/18/kck_watercolor_canvas_panel_1534586968_5bd78586.jpg",
+      title: "Watercolour Canvas Panel",
+      text: "1x new canvas",
+    },
+    {
+      image:"https://media.karousell.com/media/photos/products/2017/12/17/muji_a4_grid_foolscap_1513449349_ff7399b3.jpg",
+      title: "Muji A4 foolscap",
+      text: "Opened with 30 sheets remaining",
+    },
+    {
+      image: "https://cottonon.com/on/demandware.static/-/Sites-catalog-master-typo/default/dwf971efcf/123589/123589-179-2.jpg",
+      title: "Stationary holder",
+      text: "Used, condition: 8/10",
+    },
+    {
+      image: "https://www.homenoffice.sg/image/cache/data/Product%20Pictures/Uni-Ball%20Signo%20DX%20Gel%20Ink%20Pen%200.38mm%20Refill-1000x1000.jpg",
+      title: "Uniball signo DX refill",
+      text: "10x blue refill, 5x black refill",
+    },
+{
+      image: "https://rukminim1.flixcart.com/image/352/352/jxkpx8w0/hair-accessory/n/z/h/multi-coloured-baby-girl-hairband-headbands-rabbit-ear-3-rabbit-original-imafhvwdwgvh5tak.jpeg?q=70",
+      title: "Hairband",
+      text: "Used, Condition: 8/10",
+    },
+    {
+      image: "https://cdn11.bigcommerce.com/s-wnvd3r1/images/stencil/1280x1280/products/80/286/Adult_Pink_Leather_Belt_with_Round_Buckle__07956.1405948731.jpg?c=2",
+      title: "Pink Leather Belt",
+      text: "Used, Condition: 7/10, waist size: 23",
+    },
+    {
+      image: "https://assets.marthastewart.com/styles/wmax-520-highdpi/d25/diy-scrunchies-final-0119/diy-scrunchies-final-0119_vert.jpg?itok=yHhmVFRB",
+      title: "Korean style scrunchies",
+      text: "5x New Scrunchies",
+    },
+    {
+      image: "https://cottonon.com/on/demandware.static/-/Sites-catalog-master-typo/default/dw33424ab7/145819/145819-00-2.jpg",
+      title: "Totebag for daily fashion",
+      text: "New, can fit A4 items",
+    },
+]

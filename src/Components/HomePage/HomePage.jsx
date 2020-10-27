@@ -9,7 +9,7 @@ class HomePage extends Component {
             <div>
                 <Grid container>
                     <Grid xs={12}>
-                        <PrimarySearchAppBar />
+                        <PrimarySearchAppBar/>
                     </Grid>
                     <br />
                     <Grid xs={12}>
@@ -20,4 +20,6 @@ class HomePage extends Component {
         )
     }
 }
+
+
 export default HomePage

@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 //importing icons for categories
 import MensIcon from '@material-ui/icons/Face';
 import WomensIcon from '@material-ui/icons/Accessibility';
@@ -14,20 +15,13 @@ import HealthIcon from '@material-ui/icons/AddCircleOutline';
 import Homeproducticon from '@material-ui/icons/HotTub';
 import Foodicon from '@material-ui/icons/Cake';
 import Stationeryicon from '@material-ui/icons/Create';
-import Electronicsicon from '@material-ui/icons/Tv'; 
-//importing cards for each category
-import ReviewCardHealth from '../DisplayCard/ReviewCardHealth';
-import ReviewCardWF from '../DisplayCard/ReviewCardWF';
-import ReviewCardMF from '../DisplayCard/ReviewCardMF';
-import ReviewCardF from '../DisplayCard/ReviewCardF';
-import ReviewCardHP from '../DisplayCard/ReviewCardHP';
-import ReviewCardFP from '../DisplayCard/ReviewCardFP';
-import ReviewCardE from '../DisplayCard/ReviewCardE';
-import ReviewCardS from '../DisplayCard/ReviewCardS';
+import Electronicsicon from '@material-ui/icons/Tv';
+
+import ReviewCard from '../DisplayCard/ReviewCard'
 
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, donationposts, ...other } = props;
 
   return (
     <div
@@ -67,7 +61,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ScrollableTabsButtonForce() {
+export default function CategoryTab(props) {
+  const { donationposts } = props
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -98,36 +93,68 @@ export default function ScrollableTabsButtonForce() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-      <Box fontWeight='fontWeightMedium' display='inline'>Women's fashion</Box>
-        <ReviewCardWF/>
+        <Box fontWeight='fontWeightMedium' display='inline'>Women's fashion</Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.filter(x => x.Category === "Iphone").map(x => {
+            return(<ReviewCard post={x} />)
+          })}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Box fontWeight='fontWeightMedium' display='inline'>Men's fashion</Box>
-        <ReviewCardMF/>
+        <Box fontWeight='fontWeightMedium' display='inline'>Men's fashion</Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.map(x => {
+            return(<ReviewCard categoryid={0} post={x} />)
+          })}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <Box fontWeight='fontWeightMedium' display='inline'>Furniture</Box>
-        <ReviewCardF/>
+        <Box fontWeight='fontWeightMedium' display='inline'>Furniture</Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.map(x => {
+            return(<ReviewCard categoryid={0} post={x} />)
+          })}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <Box fontWeight='fontWeightMedium' display='inline'>Health and beauty</Box>
-        <ReviewCardHealth/>
+        <Box fontWeight='fontWeightMedium' display='inline'>Health and beauty</Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.map(x => {
+            return(<ReviewCard categoryid={0} post={x} />)
+          })}
+        </Grid>
       </TabPanel>
-      <TabPanel value={value} index={4}>     
-      <Box fontWeight='fontWeightMedium' display='inline'>Home products</Box>
-        <ReviewCardHP/>
+      <TabPanel value={value} index={4}>
+        <Box fontWeight='fontWeightMedium' display='inline'>Home products</Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.map(x => {
+            return(<ReviewCard categoryid={0} post={x} />)
+          })}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={5}>
-      <Box fontWeight='fontWeightMedium' display='inline'>Food products</Box>
-        <ReviewCardFP/>
+        <Box fontWeight='fontWeightMedium' display='inline'>Food products</Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.map(x => {
+            return(<ReviewCard categoryid={0} post={x} />)
+          })}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={6}>
-      <Box fontWeight='fontWeightMedium' display='inline'>Electronics</Box>
-        <ReviewCardE/>
+        <Box fontWeight='fontWeightMedium' display='inline'>Electronics</Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.map(x => {
+            return(<ReviewCard categoryid={0} post={x} />)
+          })}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={7}>
-      <Box fontWeight='fontWeightMedium' display='inline'>Stationery</Box>
-        <ReviewCardS/>
+        <Box fontWeight='fontWeightMedium' display='inline'>Stationery</Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.map(x => {
+            return(<ReviewCard categoryid={0} post={x} />)
+          })}
+        </Grid>
       </TabPanel>
     </div>
   );

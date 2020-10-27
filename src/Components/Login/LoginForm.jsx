@@ -30,12 +30,13 @@ class LoginForm extends Component {
 
     componentWillReceiveProps(nextProps){
         var status = nextProps.loginstatus.Result
-        if(status === 1){
-            localStorage.setItem('username', this.state.username);
-            this.props.history.push('/home');
+        if(status === 0){
+            this.setState({error : true})
         }
         else{
-            this.setState({error : true})
+            localStorage.setItem('email', nextProps.loginstatus.email)
+            localStorage.setItem('username', nextProps.loginstatus.username);
+            this.props.history.push('/home');
         }
     }
 

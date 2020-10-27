@@ -7,11 +7,10 @@ import RegisterForm from './Components/Register/RegisterForm';
 import HomePage from './Components/HomePage/HomePage';
 import GMap from './Components/Map/GMap';
 // import DatetimePage from  './Components/DateTimePage/datetimepage';
-import Donate from './Components/Donate/Donate';
+import Donate from './Components/Donate/CreatePost/Donate';
 import Profile from './Components/Profile/Profile';
-import Editpost from './Components/EditPost/editpost';
+import Editpost from './Components/Donate/EditPost/Editpost'
 import "./index.css";
-import editpost from './Components/EditPost/editpost';
 
 function App() {
   return (
@@ -26,7 +25,7 @@ function App() {
             {/* <Route exact path="/datetimepage" component={DatetimePage}/> */}
             <Route path="/donate" component={Donate}/>
             <Route Path="/profile" component={Profile}/>
-            <Route Path="/editpost" component={editpost}/>
+            <Route Path="/editpost" component={Editpost}/>
           </Switch>
         </div>
       </BrowserRouter>

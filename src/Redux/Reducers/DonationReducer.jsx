@@ -1,13 +1,19 @@
 const initState = {
-    status: []
+    status: [],
+    donationpost: []
 };
 
 const DonationReducers = (state = initState, action) => {
-    switch(action.type){
+    switch (action.type) {
         case 'CREATE_DONATION':
-            return{
+            return {
                 ...state,
                 status: action.payload
+            }
+        case 'RETRIEVE_DONATION':
+            return {
+                ...state,
+                donationpost: action.payload
             }
         default:
             return state;
