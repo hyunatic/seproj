@@ -51,7 +51,7 @@ class RegisterForm extends Component {
         })
     }
     SelectChange = (e) => {
-        this.setState({Hall : e.target.value})
+        this.setState({ Hall: e.target.value })
     }
     handleCheck = (e) => {
         this.setState({ buttondisabled: !this.state.buttondisabled });
@@ -80,10 +80,30 @@ class RegisterForm extends Component {
                                 <br />
                                 <Grid item xs={6}>
                                     <InputLabel id="label">Hall</InputLabel>
-                                    <Select style={{width: "100%"}} onChange={this.SelectChange} labelId="label" id="Hall" value={this.state.Hall}>
-                                        <MenuItem value="Hall 1">Hall 1</MenuItem>
-                                        <MenuItem value="Hall 2">Hall 2</MenuItem>
-                                        <MenuItem value="Hall 3">Hall 3</MenuItem>
+                                    <Select style={{ width: "100%" }} onChange={this.SelectChange} labelId="label" id="Hall" value={this.state.Hall}>
+                                        <MenuItem value={'1'}>1</MenuItem>
+                                        <MenuItem value={'2'}>2</MenuItem>
+                                        <MenuItem value={'3'}>3</MenuItem>
+                                        <MenuItem value={'4'}>4</MenuItem>
+                                        <MenuItem value={'5'}>5</MenuItem>
+                                        <MenuItem value={'6'}>6</MenuItem>
+                                        <MenuItem value={'7'}>7</MenuItem>
+                                        <MenuItem value={'8'}>8</MenuItem>
+                                        <MenuItem value={'9'}>9</MenuItem>
+                                        <MenuItem value={'10'}>10</MenuItem>
+                                        <MenuItem value={'11'}>11</MenuItem>
+                                        <MenuItem value={'12'}>12</MenuItem>
+                                        <MenuItem value={'13'}>13</MenuItem>
+                                        <MenuItem value={'14'}>14</MenuItem>
+                                        <MenuItem value={'15'}>15</MenuItem>
+                                        <MenuItem value={'16'}>16</MenuItem>
+                                        <MenuItem value={'Crescent Hall'}>Crescent Hall</MenuItem>
+                                        <MenuItem value={'Pioneer Hall'}>Pioneer Hall</MenuItem>
+                                        <MenuItem value={'Binjai Hall'}>Binjai Hall</MenuItem>
+                                        <MenuItem value={'Tanjong Hall'}>Tanjong Hall</MenuItem>
+                                        <MenuItem value={'Banyan Hall'}>Banyan Hall</MenuItem>
+                                        <MenuItem value={'Sacara Hall'}>Sacara Hall</MenuItem>
+                                        <MenuItem value={'Tamarid Hall'}>Tamarid Hall</MenuItem>
                                     </Select>
                                 </Grid>
                                 <br />

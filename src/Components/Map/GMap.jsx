@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Appbar from '../AppBar/Appbar'
+import PrimarySearchAppBar from '../AppBar/appbar'
 import data from '../../static/data.json'
 
 class GMap extends Component {
@@ -33,7 +33,7 @@ class GMap extends Component {
 
     return (
       <React.Fragment>
-        <Appbar />
+        <PrimarySearchAppBar />
         <div style={{ height: '95vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: 'AIzaSyC7GMn4hAF901P06wEIVJuFs2Zdefq0TCY' }}

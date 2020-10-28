@@ -56,7 +56,7 @@ export default function CardModal(props) {
                     <div key={post.Postid} className={classes.paper}>
                         <h2 id="transition-modal-title">{post.ItemName}</h2>
                         <p id="transition-modal-description">
-                            <img src="https://images.indianexpress.com/2020/08/iPhone-12-FBBBB.jpg" alt=""/>
+                            <img src={"data:image/jpeg;base64," + post.ImageId } alt=""/>
                             Description: {post.Description}
                             Posted by: {post.Username}
                         </p>

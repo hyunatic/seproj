@@ -95,7 +95,7 @@ export default function CategoryTab(props) {
       <TabPanel value={value} index={0}>
         <Box fontWeight='fontWeightMedium' display='inline'>Women's fashion</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.filter(x => x.Category === "Iphone").map(x => {
+          {donationposts && donationposts.filter(x => x.Category === "1").map(x => {
             return(<ReviewCard post={x} />)
           })}
         </Grid>
@@ -103,56 +103,56 @@ export default function CategoryTab(props) {
       <TabPanel value={value} index={1}>
         <Box fontWeight='fontWeightMedium' display='inline'>Men's fashion</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard categoryid={0} post={x} />)
+          {donationposts && donationposts.filter(x => x.Category === "2").map(x => {
+            return(<ReviewCard post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Box fontWeight='fontWeightMedium' display='inline'>Furniture</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard categoryid={0} post={x} />)
+          {donationposts && donationposts.filter(x => x.Category === "3").map(x => {
+            return(<ReviewCard post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Box fontWeight='fontWeightMedium' display='inline'>Health and beauty</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard categoryid={0} post={x} />)
+          {donationposts && donationposts.filter(x => x.Category === "4").map(x => {
+            return(<ReviewCard post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={4}>
         <Box fontWeight='fontWeightMedium' display='inline'>Home products</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard categoryid={0} post={x} />)
+          {donationposts && donationposts.filter(x => x.Category === "5").map(x => {
+            return(<ReviewCard post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={5}>
         <Box fontWeight='fontWeightMedium' display='inline'>Food products</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard categoryid={0} post={x} />)
+          {donationposts && donationposts.filter(x => x.Category === "6").map(x => {
+            return(<ReviewCard post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={6}>
         <Box fontWeight='fontWeightMedium' display='inline'>Electronics</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard categoryid={0} post={x} />)
+          {donationposts && donationposts.filter(x => x.Category === "7").map(x => {
+            return(<ReviewCard post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={7}>
         <Box fontWeight='fontWeightMedium' display='inline'>Stationery</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard categoryid={0} post={x} />)
+          {donationposts && donationposts.filter(x => x.Category === "8").map(x => {
+            return(<ReviewCard post={x} />)
           })}
         </Grid>
       </TabPanel>

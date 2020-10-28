@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import CardModal from './Modal/CardModal';
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
@@ -29,23 +30,25 @@ export default function ReviewCard(props) {
           <CardActionArea>
             <CardMedia
               className={classes.media}
-              image="https://images.indianexpress.com/2020/08/iPhone-12-FBBBB.jpg"
+              image={"data:image/jpeg;base64," + post.ImageId}
               title="Contemplative Reptile"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
                 {post.ItemName}
-            </Typography>
+              </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 Posted on: {post.PostDate} By: {post.Username}
-            </Typography>
+              </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-              <CardModal post={post} />
-            <Button size="small" color="primary">
-              Buy
+            <CardModal post={post} />
+            <Link to="/map">
+              <Button size="small" color="primary">
+                Get
           </Button>
+            </Link>
           </CardActions>
         </Card>
       </Grid>

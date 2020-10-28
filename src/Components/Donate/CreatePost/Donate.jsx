@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import PrimarySearchAppBar from '../../AppBar/Appbar';
+import PrimarySearchAppBar from '../../AppBar/appbar';
 import './Donate.css'
 import { createDonationPost } from '../../../Redux/Actions/DonationAction'
 import Select from '@material-ui/core/Select';
@@ -28,9 +28,10 @@ class Donate extends Component {
             ItemName: this.state.itemname,
             Category: this.state.Category,
             Description: this.state.description,
-            PostDate: new Date(),
+            PostDate: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate(),
             ImageId: this.state.picture,
-            Userid: localStorage.getItem('username')   
+            username: localStorage.getItem('username'),
+            Userid: 1,
         }
         console.log(post)
         this.props.createDonationPost(post);
@@ -52,7 +53,9 @@ class Donate extends Component {
     }
     componentWillReceiveProps(nextProps) {
         //Return
-        //var status = nextProps.donationpoststatus;
+        var status = nextProps.donationpoststatus.Result;
+        if(status === 1)
+            this.props.history.push('/home');
     }
     handleChange = (e) => {
         this.setState({
@@ -83,7 +86,7 @@ class Donate extends Component {
                                     </Grid>
                                     <br />
                                     <Grid >
-                                        <TextField fullWidth multiline rows={4} onChange={this.handleChange} id="desciption" variant="outlined" color="white" label="Description " />
+                                        <TextField fullWidth multiline rows={4} onChange={this.handleChange} id="description" variant="outlined" color="white" label="Description " />
                                     </Grid>
                                     <br />
                                     <Grid container direction="row">
