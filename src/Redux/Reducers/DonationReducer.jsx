@@ -1,6 +1,7 @@
 const initState = {
     status: [],
-    donationpost: []
+    donationpost: [],
+    userdonation: []
 };
 
 const DonationReducers = (state = initState, action) => {
@@ -14,6 +15,11 @@ const DonationReducers = (state = initState, action) => {
             return {
                 ...state,
                 donationpost: action.payload
+            }
+        case 'RETRIEVE_USER_DONATION':
+            return {
+                ...state,
+                userdonation: action.payload
             }
         default:
             return state;

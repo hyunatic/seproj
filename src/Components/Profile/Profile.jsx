@@ -7,10 +7,13 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Card from '@material-ui/core/Card';
 import { Link } from 'react-router-dom'
+import { retrieveUserDonationPost } from '../../Redux/Actions/DonationAction'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 class Profile extends Component {
     state = {
-        username: localStorage.getItem('username'),
+        username: '',
         password: '',
         status: '',
         DOB: '',
@@ -33,6 +36,15 @@ class Profile extends Component {
             Hall: this.state.Hall
         };*/
     }
+    GetUserDonationPost(){
+        const post = {
+            username: localStorage.getItem('username')
+        }
+        this.props.retrieveUserDonationPost(post)
+    }
+    componentDidMount(){
+        this.setState({username: localStorage.getItem('username')})
+    }
     render() {
         return (
             <div>
@@ -44,7 +56,7 @@ class Profile extends Component {
                     <br />
                     <Grid container xs={12} container justify="center" alignItems="center">
                         <Grid>
-                            <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" label={this.state.username} />
+                            <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" disabled value={this.state.username}  label="username"/>
                         </Grid>
                         <Grid>
                             <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
@@ -99,4 +111,13 @@ class Profile extends Component {
         )
     }
 }
-export default Profile
+Profile.propTypes = {
+    retrieveUserDonationPost: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+    userdonationpost: state.donation.userdonation
+});
+//this.props.userdonationpost
+
+export default connect(mapStateToProps, { retrieveUserDonationPost })(Profile)
