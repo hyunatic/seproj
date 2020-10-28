@@ -24,8 +24,8 @@ function App() {
             <Route path="/map" component={GMap} />
             {/* <Route exact path="/datetimepage" component={DatetimePage}/> */}
             <Route path="/donate" component={Donate}/>
-            <Route Path="/profile" component={Profile}/>
-            <Route Path="/editpost" component={Editpost}/>
+            <Route path="/profile" component={Profile}/>
+            <Route path="/editpost" component={Editpost}/>
           </Switch>
         </div>
       </BrowserRouter>
