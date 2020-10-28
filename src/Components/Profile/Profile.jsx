@@ -42,8 +42,13 @@ class Profile extends Component {
         }
         this.props.retrieveUserDonationPost(post)
     }
+    //Whenever u start load the component
     componentDidMount(){
         this.setState({username: localStorage.getItem('username')})
+    }
+    //When there changes in the component
+    componentDidUpdate(nextProps){
+        
     }
     render() {
         return (
