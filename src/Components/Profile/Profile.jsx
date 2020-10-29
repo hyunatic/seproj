@@ -1,4 +1,4 @@
-import Appbar from '../AppBar/Appbar'
+import Appbar from '../AppBar/appbar'
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid';
@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import { retrieveUserDonationPost } from '../../Redux/Actions/DonationAction'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import './Profile.css';
 
 class Profile extends Component {
     state = {
@@ -59,7 +60,7 @@ class Profile extends Component {
                         <Appbar />
                     </Grid>
                     <br />
-                    <Grid container xs={12} container justify="center" alignItems="center">
+                    <Grid container xs={12} class="grid-container" container justify="center" alignItems="center">
                         <Grid>
                             <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" disabled value={this.state.username}  label="username"/>
                         </Grid>
@@ -100,7 +101,7 @@ class Profile extends Component {
                                 <MenuItem value={'Tanjong Hall'}>Tanjong Hall</MenuItem>
                                 <MenuItem value={'Banyan Hall'}>Banyan Hall</MenuItem>
                                 <MenuItem value={'Sacara Hall'}>Sacara Hall</MenuItem>
-                                <MenuItem value={'Tamarid Hall'}>Tamarid Hall</MenuItem>
+                                <MenuItem value={'Tamarind Hall'}>Tamarind Hall</MenuItem>
                             </Select>
                         </Grid>
                         <Grid>
