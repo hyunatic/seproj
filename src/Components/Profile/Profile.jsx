@@ -1,4 +1,4 @@
-import Appbar from '../AppBar/appbar'
+import Appbar from '../AppBar/Appbar'
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid';
