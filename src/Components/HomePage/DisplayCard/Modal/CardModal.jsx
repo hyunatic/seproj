@@ -4,6 +4,10 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
+import './CardModal.css';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -53,14 +57,24 @@ export default function CardModal(props) {
                 }}
             >
                 <Fade in={open}>
-                    <div key={post.Postid} className={classes.paper}>
-                        <h2 id="transition-modal-title">{post.ItemName}</h2>
-                        <p id="transition-modal-description">
-                            <img src={"data:image/jpeg;base64," + post.ImageId } alt=""/>
-                            Description: {post.Description}
-                            Posted by: {post.Username}
-                        </p>
-                    </div>
+                    <Card>
+                        <CardContent>
+                            <Grid container direction="row" justify="center" alignItems="center">
+                                <Grid>
+                                    <img src={"data:image/jpeg;base64," + post.ImageId } alt=""/>
+                                </Grid> 
+                                <Grid class="grid-container"> 
+                                <h2 id="transition-modal-title">{post.ItemName}</h2>
+                                <p id="transition-modal-description">
+                                    
+                                    Description: {post.Description} 
+                                    <br></br>
+                                    Posted by: {post.Username}
+                                </p>
+                                </Grid>
+                            </Grid>
+                        </CardContent>
+                    </Card>
                 </Fade>
             </Modal>
         </div>
