@@ -63,10 +63,9 @@ export default function CardModal(props) {
                                 <Grid>
                                     <img src={"data:image/jpeg;base64," + post.ImageId } alt=""/>
                                 </Grid> 
-                                <Grid class="grid-container"> 
+                                <Grid container class="grid-container"> 
                                 <h2 id="transition-modal-title">{post.ItemName}</h2>
                                 <p id="transition-modal-description">
-                                    
                                     Description: {post.Description} 
                                     <br></br>
                                     Posted by: {post.Username}
