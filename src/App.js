@@ -27,7 +27,7 @@ function App() {
             <Route path="/donate" component={Donate}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/editpost" component={EditPostPage}/>
-            <Route path="/deletepost" component={DeletePost} />
+            <Route path="/deletepost/:id" component={DeletePost} />
           </Switch>
         </div>
       </BrowserRouter>

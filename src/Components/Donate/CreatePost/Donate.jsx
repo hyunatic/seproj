@@ -92,7 +92,7 @@ class Donate extends Component {
                                     <Grid container direction="row">
                                         <Grid item xs={6}>
                                             <InputLabel id="label">Category</InputLabel>
-                                            <Select style={{ width: "90%" }} onChange={this.SelectChange} labelId="label" id="Hall" value={this.state.Hall}>
+                                            <Select style={{ width: "90%" }} onChange={this.SelectChange} labelId="label" id="Hall" value={this.state.Category}>
                                                 <MenuItem value="1">Women Fashion</MenuItem>
                                                 <MenuItem value="2">Men Fashion</MenuItem>
                                                 <MenuItem value="3">Furniture</MenuItem>
