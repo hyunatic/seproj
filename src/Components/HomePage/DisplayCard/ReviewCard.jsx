@@ -10,13 +10,14 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import CardModal from './Modal/CardModal';
 import { Link } from 'react-router-dom'
+import './ReviewCard.css';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 250,
   },
 });
 
@@ -25,10 +26,10 @@ export default function ReviewCard(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Grid item xs={3}>
+      <Grid item xs={3} className="grid-container">
         <Card key={post.Postid} className={classes.root}>
           <CardActionArea>
-            <CardMedia
+            <CardMedia 
               className={classes.media}
               image={"data:image/jpeg;base64," + post.ImageId}
               title="Contemplative Reptile"
