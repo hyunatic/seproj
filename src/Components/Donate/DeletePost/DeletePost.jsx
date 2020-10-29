@@ -39,7 +39,7 @@ class DeletePost extends Component {
         const { posts } = this.props
         var id = parseInt(this.props.match.params.id)
         var username = localStorage.getItem('username')
-        const currentPost = posts.filter(x => x.Postid === id && x.Username == username)
+        const currentPost = posts.filter(x => x.Postid === id && x.Username === username)
         return (
             <div>
                 <Box fontWeight='fontWeightMedium' display='inline'>Confirm Delete</Box>

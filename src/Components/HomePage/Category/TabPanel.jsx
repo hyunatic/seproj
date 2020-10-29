@@ -16,7 +16,7 @@ import Homeproducticon from '@material-ui/icons/HotTub';
 import Foodicon from '@material-ui/icons/Cake';
 import Stationeryicon from '@material-ui/icons/Create';
 import Electronicsicon from '@material-ui/icons/Tv';
-
+import TextField from '@material-ui/core/TextField'
 import ReviewCard from '../DisplayCard/ReviewCard'
 
 
@@ -82,17 +82,28 @@ export default function CategoryTab(props) {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          <Tab label="Women's Fashion" icon={<WomensIcon />} {...a11yProps(0)} />
-          <Tab label="Men's Fashion" icon={<MensIcon />} {...a11yProps(1)} />
-          <Tab label="Furniture" icon={<FurnitureIcon />} {...a11yProps(2)} />
-          <Tab label="Health and beauty" icon={<HealthIcon />} {...a11yProps(3)} />
-          <Tab label="Home products" icon={<Homeproducticon />} {...a11yProps(4)} />
-          <Tab label="Food products" icon={<Foodicon />} {...a11yProps(5)} />
-          <Tab label="Electronics" icon={<Electronicsicon />} {...a11yProps(6)} />
-          <Tab label="Stationery" icon={<Stationeryicon />} {...a11yProps(7)} />
+          <Tab label="General" icon={<WomensIcon />} {...a11yProps(0)} />
+          <Tab label="Women's Fashion" icon={<WomensIcon />} {...a11yProps(1)} />
+          <Tab label="Men's Fashion" icon={<MensIcon />} {...a11yProps(2)} />
+          <Tab label="Furniture" icon={<FurnitureIcon />} {...a11yProps(3)} />
+          <Tab label="Health and beauty" icon={<HealthIcon />} {...a11yProps(4)} />
+          <Tab label="Home products" icon={<Homeproducticon />} {...a11yProps(5)} />
+          <Tab label="Food products" icon={<Foodicon />} {...a11yProps(6)} />
+          <Tab label="Electronics" icon={<Electronicsicon />} {...a11yProps(7)} />
+          <Tab label="Stationery" icon={<Stationeryicon />} {...a11yProps(8)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
+        <Box fontWeight='fontWeightMedium' display='inline'>General <br />
+        <TextField id="search" className="input-text" variant="outlined" color="white" label="Search" />
+        </Box>
+        <Grid container direction="row" justify="space-around" alignItems="center">
+          {donationposts && donationposts.map(x => {
+            return(<ReviewCard post={x} />)
+          })}
+        </Grid>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
         <Box fontWeight='fontWeightMedium' display='inline'>Women's fashion</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "1").map(x => {
@@ -100,7 +111,7 @@ export default function CategoryTab(props) {
           })}
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={2}>
         <Box fontWeight='fontWeightMedium' display='inline'>Men's fashion</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "2").map(x => {
@@ -108,7 +119,7 @@ export default function CategoryTab(props) {
           })}
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={3}>
         <Box fontWeight='fontWeightMedium' display='inline'>Furniture</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "3").map(x => {
@@ -116,7 +127,7 @@ export default function CategoryTab(props) {
           })}
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={4}>
         <Box fontWeight='fontWeightMedium' display='inline'>Health and beauty</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "4").map(x => {
@@ -124,7 +135,7 @@ export default function CategoryTab(props) {
           })}
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={4}>
+      <TabPanel value={value} index={5}>
         <Box fontWeight='fontWeightMedium' display='inline'>Home products</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "5").map(x => {
@@ -132,7 +143,7 @@ export default function CategoryTab(props) {
           })}
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={5}>
+      <TabPanel value={value} index={6}>
         <Box fontWeight='fontWeightMedium' display='inline'>Food products</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "6").map(x => {
@@ -140,7 +151,7 @@ export default function CategoryTab(props) {
           })}
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={6}>
+      <TabPanel value={value} index={7}>
         <Box fontWeight='fontWeightMedium' display='inline'>Electronics</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "7").map(x => {
@@ -148,7 +159,7 @@ export default function CategoryTab(props) {
           })}
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={7}>
+      <TabPanel value={value} index={8}>
         <Box fontWeight='fontWeightMedium' display='inline'>Stationery</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "8").map(x => {

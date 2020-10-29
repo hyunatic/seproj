@@ -57,7 +57,9 @@ export default function EditModal(props) {
                 }}
             >
                 <Fade in={open}>
-            <EditForm post={post}/>
+                    <div key={post.Postid} className={classes.paper}>
+                        <EditForm post={post} />
+                    </div>
                 </Fade>
             </Modal>
         </div>

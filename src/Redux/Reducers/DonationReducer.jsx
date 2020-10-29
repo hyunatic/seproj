@@ -26,6 +26,11 @@ const DonationReducers = (state = initState, action) => {
                 ...state,
                 status: action.payload
             }
+        case 'UPDATE_USER_DONATION':
+            return {
+                ...state,
+                status: action.payload
+            }
         default:
             return state;
     }

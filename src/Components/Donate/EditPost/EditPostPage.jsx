@@ -9,8 +9,12 @@ import { connect } from 'react-redux'
 import { retrieveUserDonationPost } from '../../../Redux/Actions/DonationAction'
 import Box from '@material-ui/core/Box'
 
+
 class EditPostPage extends Component {
     componentDidMount() {
+        this.retrieveDetails();
+    }
+    componentDidUpdate(){
         this.retrieveDetails();
     }
     retrieveDetails() {
@@ -31,7 +35,7 @@ class EditPostPage extends Component {
                 <Box fontWeight='fontWeightMedium' display='inline'>My Posts</Box>
                     <Grid container direction="row" justify="center">
                         {posts && posts.map(x => {
-                            return (<UserPostCard post={x} />)
+                            return (<UserPostCard key={x.Postid} post={x} />)
                         })}
                     </Grid>
                     <br/>
