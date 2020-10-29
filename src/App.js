@@ -9,8 +9,9 @@ import GMap from './Components/Map/GMap';
 // import DatetimePage from  './Components/DateTimePage/datetimepage';
 import Donate from './Components/Donate/CreatePost/Donate';
 import Profile from './Components/Profile/Profile';
-import Editpost from './Components/Donate/EditPost/Editpost'
+import EditPostPage from './Components/Donate/EditPost/EditPostPage'
 import "./index.css";
+import DeletePost from './Components/Donate/DeletePost/DeletePost';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
             {/* <Route exact path="/datetimepage" component={DatetimePage}/> */}
             <Route path="/donate" component={Donate}/>
             <Route path="/profile" component={Profile}/>
-            <Route path="/editpost" component={Editpost}/>
+            <Route path="/editpost" component={EditPostPage}/>
+            <Route path="/deletepost" component={DeletePost} />
           </Switch>
         </div>
       </BrowserRouter>

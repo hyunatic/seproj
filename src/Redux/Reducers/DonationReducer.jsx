@@ -21,6 +21,11 @@ const DonationReducers = (state = initState, action) => {
                 ...state,
                 userdonation: action.payload
             }
+        case 'DELETE_USER_DONATION':
+            return {
+                ...state,
+                status: action.payload
+            }
         default:
             return state;
     }

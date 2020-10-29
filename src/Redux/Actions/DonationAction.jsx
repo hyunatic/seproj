@@ -40,3 +40,19 @@ export const retrieveUserDonationPost = (postData) => dispatch => {
         })
         );
 }
+
+export const deleteDonationPost = (postData) => dispatch => {
+    fetch('https://ntuseproj.herokuapp.com/api/delete_Item', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(postData)
+    })
+        .then(res => res.json())
+        .then(data => dispatch({
+            type: 'DELETE_USER_DONATION',
+            payload: data
+        })
+        );
+}
