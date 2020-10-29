@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import PrimarySearchAppBar from '../AppBar/appbar'
+import PrimarySearchAppBar from '../AppBar/Appbar'
 import data from '../../static/data.json'
 
 class GMap extends Component {

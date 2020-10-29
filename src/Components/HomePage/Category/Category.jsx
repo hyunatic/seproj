@@ -8,6 +8,9 @@ class Category extends Component {
     componentDidMount(){
         this.props.retrieveDonationPost();
     }
+    componentDidUpdate(){
+        this.props.retrieveDonationPost();
+    }
     render() {
         const { posts } = this.props
         return (
