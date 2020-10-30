@@ -29,7 +29,7 @@ export default function ReviewCard(props) {
       <Grid item xs={3} className="grid-container">
         <Card key={post.Postid} className={classes.root}>
           <CardActionArea>
-            <CardMedia 
+            <CardMedia
               className={classes.media}
               image={"data:image/jpeg;base64," + post.ImageId}
               title="Contemplative Reptile"
