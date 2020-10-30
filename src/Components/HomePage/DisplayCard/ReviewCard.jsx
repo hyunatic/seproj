@@ -45,7 +45,7 @@ export default function ReviewCard(props) {
           </CardActionArea>
           <CardActions>
             <CardModal post={post} />
-            <Link to="/map">
+            <Link to="/Order">
               <Button size="small" color="primary">
                 Get
           </Button>

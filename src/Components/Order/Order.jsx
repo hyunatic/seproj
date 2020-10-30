@@ -1,11 +1,33 @@
 import React, { Component } from 'react'
 import PrimarySearchAppBar from '../AppBar/appbar'
-import Type from './Types'
 import Grid from '@material-ui/core/Grid';
 
 
 export default class Order extends Component {
+    constructor(props) {
+        super();
+    }
+    state = {
+        Date: '',
+        Time: '',
+        Postid: '',
+        req_Userid: ''
+    }
+    handleChange(event) {
+        this.setState({[event.target.id]: event.target.value});
+      }
+      handleSubmit(event) {
+        event.preventDefault();
+      }
+      onSubmit(){
+        //Waiting for Yi chen....
+        const post = {
+
+        }
+      }
     render() {
+        const { post } = this.props
+        console.log(this.props)
         return (
             <div>
                 <Grid container>
@@ -14,7 +36,7 @@ export default class Order extends Component {
                     </Grid>
                     <br />
                     <Grid xs={12}>
-                        <Type />
+
                     </Grid>
                 </Grid>
             </div>

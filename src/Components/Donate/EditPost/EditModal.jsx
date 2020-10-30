@@ -36,9 +36,6 @@ export default function EditModal(props) {
         setOpen(false);
     };
 
-    var Itemname;
-    var Description;
-
     return (
         <div>
             <Button size="small" onClick={handleOpen} color="primary">
