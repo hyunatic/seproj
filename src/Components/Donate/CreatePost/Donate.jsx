@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import PrimarySearchAppBar from '../../AppBar/Appbar';
+import PrimarySearchAppBar from '../../AppBar/appbar';
 import './Donate.css'
 import { createDonationPost } from '../../../Redux/Actions/DonationAction'
 import Select from '@material-ui/core/Select';
