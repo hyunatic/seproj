@@ -53,6 +53,7 @@ class PlaceOrderForm extends Component {
         return (
             <div>
                 <PrimarySearchAppBar />
+                <br></br>
                 <Box fontWeight='fontWeightMedium' display='inline'>My Order</Box>
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item >

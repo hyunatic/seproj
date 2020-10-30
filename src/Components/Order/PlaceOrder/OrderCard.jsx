@@ -37,7 +37,9 @@ export default function OrderCard(props) {
                 {post.ItemName}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Posted on: {post.PostDate} By: {post.Username}
+                Posted on: {post.PostDate} 
+                <br></br>
+                By: {post.Username}
               </Typography>
             </CardContent>
           </CardActionArea>
