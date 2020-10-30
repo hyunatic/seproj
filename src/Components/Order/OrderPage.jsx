@@ -4,7 +4,7 @@ import PrimarySearchAppBar from '../AppBar/appbar'
 import Grid from '@material-ui/core/Grid';
 
 
-export default class Order extends Component {
+export default class OrderPage extends Component {
     constructor(props) {
         super();
     }

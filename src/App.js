@@ -11,7 +11,7 @@ import Profile from './Components/Profile/Profile';
 import EditPostPage from './Components/Donate/EditPost/EditPostPage'
 import "./index.css";
 import DeletePost from './Components/Donate/DeletePost/DeletePost';
-import Order from './Components/Order/Order'
+import OrderPage from './Components/Order/OrderPage'
 import PlaceOrderForm from './Components/Order/PlaceOrder/PlaceOrderForm';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
             <Route path="/editpost" component={EditPostPage}/>
             <Route path="/deletepost/:id" component={DeletePost} />
             <Route path="/placeOrder/:id" component={PlaceOrderForm} />
-            <Route path="/Order" component={Order} />
+            <Route path="/Order" component={OrderPage} />
           </Switch>
         </div>
       </BrowserRouter>
