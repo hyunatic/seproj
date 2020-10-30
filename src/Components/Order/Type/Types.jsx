@@ -1,30 +1,34 @@
 import React, { Component } from 'react'
 import TypesPanel from './TypesPanel'
 import { connect } from 'react-redux'
-import { retrieveDonationPost } from '../../../Redux/Actions/DonationAction'
+import { viewDonationOrder } from '../../../Redux/Actions/OrderAction'
 import PropTypes from 'prop-types'
 
-class Category extends Component {
-    componentDidMount(){
-        this.props.retrieveDonationPost();
+class Types extends Component {
+    componentDidMount() {
+        this.retrieveDetails();
     }
-    componentDidUpdate(){
-        this.props.retrieveDonationPost();
+    retrieveDetails() {
+        const post = {
+            username: localStorage.getItem('username')
+        }
+        this.props.viewDonationOrder(post);
     }
+
     render() {
         const { posts } = this.props
         return (
             <div>
-                <TypesPanel donationposts={posts}/>
+                <TypesPanel orderpost={posts}/>
             </div>
         )
     }
 }
-Category.propTypes = {
-    retrieveDonationPost: PropTypes.func.isRequired
+Types.propTypes = {
+    viewDonationOrder: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    posts: state.donation.donationpost
+    posts: state.orders.orderlist
 });
-export default connect(mapStateToProps, { retrieveDonationPost })(Category)
+export default connect(mapStateToProps, { viewDonationOrder })(Types)

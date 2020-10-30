@@ -13,7 +13,6 @@ class EditForm extends Component {
     postdate: ''
   }
   constructor(props){
-    console.log(props)
     super(props)
     this.onSubmit = this.onSubmit.bind(this)
   }

@@ -8,9 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 //importing icons for categories
-import ReviewCard from '../../HomePage/DisplayCard/ReviewCard'
 import ViewAgendaIcon from '@material-ui/icons/ViewAgenda';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import OrderCard from './OrderCard'
 
 function TabPanel(props) {
   const { children, value, index, donationposts, ...other } = props;
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Order(props) {
-  const { donationposts } = props
+  const { orderpost } = props
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -82,17 +82,15 @@ export default function Order(props) {
         <Box fontWeight='fontWeightMedium' display='inline'>My Order<br />
         </Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard post={x} />)
+          {orderpost && orderpost.map(x => {
+            return (<OrderCard post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {donationposts && donationposts.filter(x => x.Category === "1").map(x => {
-            return(<ReviewCard post={x} />)
-          })}
+          test12
         </Grid>
       </TabPanel>
     </div>

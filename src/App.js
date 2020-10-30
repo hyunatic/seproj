@@ -6,13 +6,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import RegisterForm from './Components/Register/RegisterForm';
 import HomePage from './Components/HomePage/HomePage';
 import GMap from './Components/Map/GMap';
-// import DatetimePage from  './Components/DateTimePage/datetimepage';
 import Donate from './Components/Donate/CreatePost/Donate';
 import Profile from './Components/Profile/Profile';
 import EditPostPage from './Components/Donate/EditPost/EditPostPage'
 import "./index.css";
 import DeletePost from './Components/Donate/DeletePost/DeletePost';
 import Order from './Components/Order/Order'
+import PlaceOrderForm from './Components/Order/PlaceOrder/PlaceOrderForm';
 
 function App() {
   return (
@@ -24,11 +24,11 @@ function App() {
             <Route path="/register" component={RegisterForm}/>
             <Route path="/home" component={HomePage}/>
             <Route path="/map" component={GMap} />
-            {/* <Route exact path="/datetimepage" component={DatetimePage}/> */}
             <Route path="/donate" component={Donate}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/editpost" component={EditPostPage}/>
             <Route path="/deletepost/:id" component={DeletePost} />
+            <Route path="/placeOrder/:id" component={PlaceOrderForm} />
             <Route path="/Order" component={Order} />
           </Switch>
         </div>

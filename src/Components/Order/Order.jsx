@@ -37,7 +37,7 @@ export default class Order extends Component {
                     </Grid>
                     <br />
                     <Grid xs={12}>
-                        <Types/>
+                        <Types />
                     </Grid>
                 </Grid>
             </div>

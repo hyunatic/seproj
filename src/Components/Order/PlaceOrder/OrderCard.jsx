@@ -8,9 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import CardModal from './Modal/CardModal';
 import { Link } from 'react-router-dom'
-import './ReviewCard.css';
 
 const useStyles = makeStyles({
   root: {
@@ -21,12 +19,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ReviewCard(props) {
+export default function OrderCard(props) {
   const { post } = props
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Grid item xs={3} className="grid-container">
+      <Grid className="grid-container">
         <Card key={post.Postid} className={classes.root}>
           <CardActionArea>
             <CardMedia
@@ -44,12 +42,7 @@ export default function ReviewCard(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <CardModal post={post} />
-            <Link to={ "placeOrder/" + post.Postid }>
-              <Button className="removeHyperlink" size="small" color="primary">
-                Get
-          </Button>
-            </Link>
+
           </CardActions>
         </Card>
       </Grid>
