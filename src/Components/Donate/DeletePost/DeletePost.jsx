@@ -9,6 +9,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { Link } from 'react-router-dom'
 import Box from '@material-ui/core/Box'
+import PrimarySearchAppBar from '../../AppBar/appbar';
+import './DeletePost.css';
 
 class DeletePost extends Component {
     state = {
@@ -42,29 +44,38 @@ class DeletePost extends Component {
         const currentPost = posts.filter(x => x.Postid === id && x.Username === username)
         return (
             <div>
+                <div>
+                    <Grid container>
+                        <Grid xs={12}>
+                            <PrimarySearchAppBar />
+                        </Grid>
+                    </Grid>
+                </div>
+                <br></br>
                 <Box fontWeight='fontWeightMedium' display='inline'>Confirm Delete</Box>
                 {currentPost && currentPost.map(x => {
                     return (
                         <Card key={x.Postid}>
                             <CardContent>
-                                <Grid>
+                                <Grid container direction="row" justify="center" alignItems="center">
+                                    <Grid>
+                                        <img src={"data:image/jpeg;base64," + x.ImageId} alt="" />
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={12} sm container>
+                                    <Grid item xs container direction="column">
                                     <form noValidate autoComplete="off">
-                                        <Grid >
+                                        <Grid item xs>
                                             <TextField fullWidth id="itemname" disabled variant="outlined" color="white" label="Item name" value={x.ItemName} />
                                         </Grid>
                                         <br />
-                                        <Grid >
+                                        <Grid item xs>
                                             <TextField fullWidth multiline rows={4} disabled id="description" variant="outlined" color="white" label="Description" value={x.Description} />
                                         </Grid>
                                         <br />
                                         <Grid container direction="row">
-                                            <Grid item xs={6}>
+                                            <Grid item xs={4}>
                                                 <TextField fullWidth id="category" variant="outlined" disabled value={x.Category} color="white" label="Category" />
-                                            </Grid>
-                                            <Grid item xs={2}>
-                                            </Grid>
-                                            <Grid xs={4}>
-                                                <img src={"data:image/jpeg;base64," + x.ImageId} width="200" height="200" alt="" />
                                             </Grid>
                                         </Grid>
                                         <br />
@@ -77,6 +88,7 @@ class DeletePost extends Component {
                                             </Grid>
                                         </Grid>
                                     </form>
+                                    </Grid>
                                 </Grid>
                             </CardContent>
                         </Card>
