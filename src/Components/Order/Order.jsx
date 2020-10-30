@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Types from './Type/Types'
 import PrimarySearchAppBar from '../AppBar/appbar'
 import Grid from '@material-ui/core/Grid';
 
@@ -36,7 +37,7 @@ export default class Order extends Component {
                     </Grid>
                     <br />
                     <Grid xs={12}>
-
+                        <Types/>
                     </Grid>
                 </Grid>
             </div>
