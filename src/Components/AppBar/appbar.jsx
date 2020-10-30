@@ -132,6 +132,7 @@ export default function PrimarySearchAppBar() {
     >
       <Link className="removeHyperlinkB" to="/profile"><MenuItem>Profile</MenuItem></Link>
       <Link className="removeHyperlinkB" to="/editpost" ><MenuItem>Edit My Donations</MenuItem></Link>
+      <Link className="removeHyperlinkB" to="/Order" ><MenuItem>My Orders</MenuItem></Link>
       <MenuItem onClick={Logout}>Logout</MenuItem>  
     </Menu>
     
@@ -155,6 +156,7 @@ export default function PrimarySearchAppBar() {
         </MenuItem>
       </Link>
       <Link className="removeHyperlinkB" to="/editpost"><MenuItem>Edit My Donations</MenuItem></Link>
+      <Link className="removeHyperlinkB" to="/Order" ><MenuItem>My Orders</MenuItem></Link>
       <MenuItem onClick={Logout}>
         <p>Logout</p>
       </MenuItem>
