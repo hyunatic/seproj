@@ -43,11 +43,9 @@ export default function ReviewCard(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Link to={ "placeOrder/" + post.Postid }>
-              <Button className="removeHyperlink" size="small" color="primary">
-                Get
-          </Button>
-            </Link>
+              <Button color="primary"> View</Button>
+          <Button color="primary"> Delete </Button>
+
           </CardActions>
         </Card>
       </Grid>
