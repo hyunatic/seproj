@@ -8,6 +8,7 @@ import './CardModal.css';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -59,17 +60,25 @@ export default function CardModal(props) {
                 <Fade in={open}>
                     <Card>
                         <CardContent>
-                            <Grid container direction="row" justify="center" alignItems="center">
-                                <Grid>
+                            <Grid container spacing={2}>
+                                <Grid item>
                                     <img src={"data:image/jpeg;base64," + post.ImageId } alt=""/>
-                                </Grid> 
-                                <Grid container class="grid-container"> 
-                                <h2 id="transition-modal-title">{post.ItemName}</h2>
-                                <p id="transition-modal-description">
-                                    Description: {post.Description} 
-                                    <br></br>
-                                    Posted by: {post.Username}
-                                </p>
+                                </Grid>
+                                <Grid item xs={12} sm container>
+                                    <Grid item xs container direction="column" spacing={2}>
+                                        <Grid item xs>
+                                            <Typography gutterBottom variant="subtitle1">
+                                                <h2 id="transition-modal-title">{post.ItemName}</h2>
+                                            </Typography>
+                                            <Typography variant="body2" gutterBottom>
+                                                <p id="transition-modal-description">
+                                                    Description: {post.Description} 
+                                                    <br></br>
+                                                    Posted by: {post.Username}
+                                                </p>
+                                            </Typography>
+                                        </Grid>
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </CardContent>
