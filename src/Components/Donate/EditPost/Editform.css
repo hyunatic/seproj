@@ -1,0 +1,10 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto;
+    padding: 5px;
+    margin-top:10px;
+
+}
+p{
+    margin-top: 2em;
+}
