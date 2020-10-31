@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom'
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
+import './PlaceOrderForm.css';
 
 class PlaceOrderForm extends Component {
     state = {
@@ -55,8 +56,8 @@ class PlaceOrderForm extends Component {
                 <PrimarySearchAppBar />
                 <br></br>
                 <Box fontWeight='fontWeightMedium' display='inline'>My Order</Box>
-                <Grid container direction="row" justify="center" alignItems="center">
-                    <Grid item >
+                <Grid container direction="row" justify="center" alignItems="start" classname="grid-container">
+                    <Grid item xs={2}>
                         {posts && posts.filter(x => x.Postid === id).map(x => {
                             return (<OrderCard key={x.Postid} post={x} />)
                         })}
