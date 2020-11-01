@@ -35,6 +35,7 @@ class PlaceOrderForm extends Component {
         this.setState({ MovingService: e.target.value })
     }
     onSubmit = (val) => {
+        console.log(val)
         const post = {
             Postid: val[0].Postid,
             req_Userid: "1",
@@ -42,7 +43,8 @@ class PlaceOrderForm extends Component {
             Date: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate(),
             Time: new Date().getHours() + ":" + new Date().getMinutes(),
             Location: this.state.address,
-            MovingService: this.state.MovingService
+            MovingService: this.state.MovingService,
+            //Imageid : val[0].ImageId
         }
         this.props.createDonationOrder(post)
         this.props.history.push("/order")
