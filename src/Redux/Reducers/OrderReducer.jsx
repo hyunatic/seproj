@@ -15,6 +15,11 @@ const OrderReducers = (state = initState, action) => {
                 ...state,
                 orderlist: action.payload
             }
+        case 'DELETE_USER_ORDER':
+            return {
+                ...state,
+                status: action.payload
+            }
         default:
             return state;
     }
