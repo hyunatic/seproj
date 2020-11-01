@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Order(props) {
+  const { donationposts } = props
   const { orderpost } = props
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -84,7 +85,7 @@ export default function Order(props) {
         </Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {orderpost && orderpost.map(x => {
-            return (<OrderCard post={x} />)
+            return (<OrderCard post={x} donationposts={donationposts}/>)
           })}
         </Grid>
       </TabPanel>

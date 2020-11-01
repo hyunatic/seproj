@@ -27,7 +27,6 @@ class Types extends Component {
         const { posts } = this.props
         const { donationposts } = this.props
         const { approvalposts } = this.props
-        console.log(this.props)
         return (
             <div>
                 <TypesPanel orderpost={posts} donationposts={donationposts}/>

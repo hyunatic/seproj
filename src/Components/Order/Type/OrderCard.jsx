@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 
 export default function OrderCard(props) {
   const { post } = props
-  //console.log(post)
+  const { donationposts } = props
   const classes = useStyles();
 
   if (post.OrderConfirm) {
