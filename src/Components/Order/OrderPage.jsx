@@ -20,15 +20,9 @@ export default class OrderPage extends Component {
       handleSubmit(event) {
         event.preventDefault();
       }
-      onSubmit(){
-        //Waiting for Yi chen....
-        const post = {
-
-        }
-      }
+    
     render() {
         const { post } = this.props
-        console.log(this.props)
         return (
             <div>
                 <Grid container>

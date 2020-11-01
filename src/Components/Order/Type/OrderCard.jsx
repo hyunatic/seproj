@@ -22,7 +22,6 @@ const useStyles = makeStyles({
 
 export default function OrderCard(props) {
   const { post } = props
-  console.log(post)
   const { donationposts } = props
   const classes = useStyles();
 
@@ -32,11 +31,15 @@ export default function OrderCard(props) {
         <Grid item xs={3} className="grid-container">
           <Card key={post.Postid} className={classes.root}>
             <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={"data:image/jpeg;base64," + post.ImageId}
-                title="Contemplative Reptile"
-              />
+              {donationposts.filter(x => x.Postid === post.Postid).map(x => {
+                return (
+                  <CardMedia key={x.Postid}
+                    className={classes.media}
+                    image={"data:image/jpeg;base64," + x.ImageId}
+                    title={x.ItemName}
+                  />
+                )
+              })}
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   {post.ItemName}
@@ -50,7 +53,7 @@ export default function OrderCard(props) {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button color="primary">Cancel Order</Button>
+            <DeleteOrder orderid={post.Postid} />
             </CardActions>
           </Card>
         </Grid>
@@ -60,28 +63,31 @@ export default function OrderCard(props) {
   else {
     return (
       <React.Fragment>
-        <Grid item xs={3} className="grid-container">
+        <Grid item xs={4} className="grid-container">
           <Card key={post.Postid} className={classes.root}>
             <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={"data:image/jpeg;base64," + post.ImageId}
-                title="Contemplative Reptile"
-              />
+              {donationposts.filter(x => x.Postid === post.Postid).map(x => {
+                return (
+                  <CardMedia key={x.Postid}
+                    className={classes.media}
+                    image={"data:image/jpeg;base64," + x.ImageId}
+                    title={x.ItemName}
+                  />
+                )
+              })}
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   {post.ItemName}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Collection Point: {post.Location}
+                  Collection Point: {post.Location} {post.OrderId}
                   <br />
-                  Order Confirmation: Pending
-                  <br />
+                  Order Confirmation: Pending 
                 </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <DeleteOrder orderid={post.Postid}/>
+              <DeleteOrder orderid={post.OrderId} />
             </CardActions>
           </Card>
         </Grid>

@@ -86,7 +86,7 @@ export default function Order(props) {
         </Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {orderpost && orderpost.map(x => {
-            return (<OrderCard post={x} donationposts={donationposts}/>)
+            return (<OrderCard key={x.OrderId} post={x} donationposts={donationposts}/>)
           })}
         </Grid>
       </TabPanel>
@@ -94,7 +94,7 @@ export default function Order(props) {
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {approvalposts && approvalposts.map(x => {
-            return (<ApproveCard post={x} />)
+            return (<ApproveCard key={x.OrderId} post={x} />)
           })}
         </Grid>
       </TabPanel>

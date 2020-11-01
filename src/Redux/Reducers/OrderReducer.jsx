@@ -1,7 +1,8 @@
 const initState = {
     status: [],
     orderlist: [],
-    approvallist: []
+    approvallist: [],
+    delstatus: []
 };
 
 const OrderReducers = (state = initState, action) => {
@@ -19,7 +20,7 @@ const OrderReducers = (state = initState, action) => {
         case 'DELETE_USER_ORDER':
             return {
                 ...state,
-                status: action.payload
+                delstatus: action.payload
             }
         case 'VIEW_APPROVAL':
             return {

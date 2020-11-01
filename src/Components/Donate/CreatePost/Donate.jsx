@@ -33,7 +33,7 @@ class Donate extends Component {
             username: localStorage.getItem('username'),
             Userid: 1,
         }
-        console.log(post)
+
         this.props.createDonationPost(post);
     }
     SelectChange = (e) => {
