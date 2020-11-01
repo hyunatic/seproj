@@ -12,9 +12,10 @@ class ApprovalOrder extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         const post = {
-            OrderID: this.props.postId,
+            OrderID: this.props.post,
             OrderConfirm: true 
         };
+        this.props.ApprovalOrder(post)
     }
     render() {
         return (

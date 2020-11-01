@@ -44,7 +44,7 @@ export default function ApprovalCard(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <ApprovalOrder post={post.Postid}/>
+            <ApprovalOrder post={post.OrderId}/>
           </CardActions>
         </Card>
       </Grid>
