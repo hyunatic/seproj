@@ -23,14 +23,16 @@ const useStyles = makeStyles({
 export default function ApprovalCard(props) {
   const { post } = props
   const { donationposts } = props
+  console.log(post)
   const classes = useStyles();
 
-  return (
-    <React.Fragment>
-      <Grid item xs={3} className="grid-container">
-        <Card key={post.Postid} className={classes.root}>
-          <CardActionArea>
-          {donationposts.filter(x => x.Postid === post.Postid).map(x => {
+  if (!post.OrderConfirm) {
+    return (
+      <React.Fragment>
+        <Grid item xs={3} className="grid-container">
+          <Card key={post.Postid} className={classes.root}>
+            <CardActionArea>
+              {donationposts.filter(x => x.Postid === post.Postid).map(x => {
                 return (
                   <CardMedia key={x.Postid}
                     className={classes.media}
@@ -39,20 +41,26 @@ export default function ApprovalCard(props) {
                   />
                 )
               })}
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                {post.ItemName}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Request from: {post.req_username}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <ApprovalOrder post={post.OrderId}/>
-          </CardActions>
-        </Card>
-      </Grid>
-    </React.Fragment>
-  );
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {post.ItemName}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Request from: {post.req_username}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <ApprovalOrder post={post.OrderId} />
+            </CardActions>
+          </Card>
+        </Grid>
+      </React.Fragment>
+    );
+  }
+  else{
+    return(
+      <React.Fragment></React.Fragment>
+    )
+  }
 }
