@@ -33,7 +33,6 @@ class GMap extends Component {
 
     return (
       <React.Fragment>
-        <PrimarySearchAppBar />
         <div style={{ height: '95vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: 'AIzaSyC7GMn4hAF901P06wEIVJuFs2Zdefq0TCY' }}

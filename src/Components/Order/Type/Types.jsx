@@ -20,10 +20,10 @@ class Types extends Component {
 
     render() {
         const { posts } = this.props
-        console.log(this.props)
+        const { donationposts } = this.props
         return (
             <div>
-                <TypesPanel orderpost={posts}/>
+                <TypesPanel orderpost={posts} donationposts={donationposts}/>
             </div>
         )
     }
@@ -40,6 +40,6 @@ const mapStateToProps = state => ({
 const actionCreator = {
     viewDonationOrder,
     retrieveDonationPost,
-    
+
 }
 export default connect(mapStateToProps, actionCreator)(Types)

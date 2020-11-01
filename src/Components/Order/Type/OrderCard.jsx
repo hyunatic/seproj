@@ -21,6 +21,7 @@ const useStyles = makeStyles({
 
 export default function ReviewCard(props) {
   const { post } = props
+  console.log(post)
   const classes = useStyles();
 
   if (post.OrderConfirm) {
