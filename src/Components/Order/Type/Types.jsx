@@ -11,10 +11,10 @@ class Types extends Component {
         this.props.retrieveDonationPost();
         this.retrieveApproval();
     }
-    // componentDidUpdate(){
-    //     this.retrieveDetails();
-    //     this.retrieveApproval();
-    // }
+    componentDidUpdate(){
+        this.retrieveDetails();
+        this.retrieveApproval();
+    }
     retrieveDetails() {
         const post = {
             username: localStorage.getItem('username')

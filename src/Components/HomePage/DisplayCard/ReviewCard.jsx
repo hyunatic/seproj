@@ -15,6 +15,7 @@ import './ReviewCard.css';
 const useStyles = makeStyles({
   root: {
     maxWidth: 245,
+    minWidth: 245,
   },
   media: {
     height: 250,
@@ -27,7 +28,7 @@ export default function ReviewCard(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Grid item md={3} className="grid-container">
+      <Grid item lg={3} className="grid-container">
         <Card key={post.Postid} className={classes.root}>
           <CardActionArea>
             <CardMedia

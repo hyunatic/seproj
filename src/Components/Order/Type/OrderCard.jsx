@@ -53,7 +53,7 @@ export default function OrderCard(props) {
               </CardContent>
             </CardActionArea>
             <CardActions>
-            <DeleteOrder orderid={post.Postid} />
+
             </CardActions>
           </Card>
         </Grid>

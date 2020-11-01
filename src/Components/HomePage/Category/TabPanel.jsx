@@ -97,14 +97,14 @@ export default function CategoryTab(props) {
         <Box fontWeight='fontWeightMedium' display='inline'>General<br />
         <TextField id="search" className="input-text" variant="outlined" color="white" label="Search" />
         </Box>
-        <Grid container spacing={1} direction="row" alignItems="left">
+        <Grid container spacing={1} direction="row" justify="flex-start">
           {donationposts && donationposts.map(x => {
             return(<ReviewCard post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Box fontWeight='fontWeightMedium' display='inline'>Women's fashion</Box>
+        <Box margin-marginBottom={2} fontWeight='fontWeightMedium' display='inline'>Women's fashion</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {donationposts && donationposts.filter(x => x.Category === "1").map(x => {
             return(<ReviewCard post={x} />)

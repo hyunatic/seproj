@@ -17,9 +17,6 @@ class ApprovalOrder extends Component {
         };
         this.props.ApproveOrder(post)
     }
-    componentDidUpdate(nextProps){
-        console.log(nextProps)
-    }
     render() {
         return (
             <div>
