@@ -94,7 +94,7 @@ export default function Order(props) {
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {approvalposts && approvalposts.map(x => {
-            return (<ApproveCard key={x.OrderId} post={x} />)
+            return (<ApproveCard key={x.OrderId} donationposts={donationposts} post={x} />)
           })}
         </Grid>
       </TabPanel>
