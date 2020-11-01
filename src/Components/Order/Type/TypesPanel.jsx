@@ -56,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Order(props) {
   const { orderpost } = props
+  const {approvalposts} = props
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -91,7 +92,7 @@ export default function Order(props) {
       <TabPanel value={value} index={1}>
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          {orderpost && orderpost.map(x => {
+          {approvalposts && approvalposts.map(x => {
             return (<ApproveCard post={x} />)
           })}
         </Grid>

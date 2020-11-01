@@ -30,7 +30,7 @@ class Types extends Component {
         console.log(this.props)
         return (
             <div>
-                <TypesPanel orderpost={posts} donationposts={donationposts}/>
+                <TypesPanel orderpost={posts} donationposts={donationposts} approvalposts={approvalposts}/>
             </div>
         )
     }
