@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import TypesPanel from './TypesPanel'
 import { connect } from 'react-redux'
 import { viewDonationOrder } from '../../../Redux/Actions/OrderAction'
+import { retrieveDonationPost } from '../../../Redux/Actions/DonationAction'
 import PropTypes from 'prop-types'
+import { compose } from 'redux'
 
 class Types extends Component {
     componentDidMount() {
         this.retrieveDetails();
+        this.props.retrieveDonationPost();
     }
     retrieveDetails() {
         const post = {
@@ -17,6 +20,7 @@ class Types extends Component {
 
     render() {
         const { posts } = this.props
+        console.log(this.props)
         return (
             <div>
                 <TypesPanel orderpost={posts}/>
@@ -25,10 +29,17 @@ class Types extends Component {
     }
 }
 Types.propTypes = {
-    viewDonationOrder: PropTypes.func.isRequired
+    viewDonationOrder: PropTypes.func.isRequired,
+    retrieveDonationPost: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    posts: state.orders.orderlist
+    posts: state.orders.orderlist,
+    donationposts: state.donation.donationpost
 });
-export default connect(mapStateToProps, { viewDonationOrder })(Types)
+const actionCreator = {
+    viewDonationOrder,
+    retrieveDonationPost,
+    
+}
+export default connect(mapStateToProps, actionCreator)(Types)
