@@ -3,9 +3,9 @@
     color: white;
 }
 .Center{
-    width: fit-content;
+    max-width: 30%;
     height: fit-content;
-    padding-top: 15%;
+    padding-top: 5%;
     margin: auto;
 }
 img{
