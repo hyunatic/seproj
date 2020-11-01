@@ -8,8 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { Link } from 'react-router-dom'
-import { deleteDonationOrder } from '../../../Redux/Actions/OrderAction';
 
 
 const useStyles = makeStyles({
@@ -25,6 +23,7 @@ export default function OrderCard(props) {
   const { post } = props
   const classes = useStyles();
 
+<<<<<<< HEAD
   return (
     <React.Fragment>
       <Grid item xs={3} className="grid-container">
@@ -52,4 +51,68 @@ export default function OrderCard(props) {
       </Grid>
     </React.Fragment>
   );
+=======
+  if (post.OrderConfirm) {
+    return (
+      <React.Fragment>
+        <Grid item xs={3} className="grid-container">
+          <Card key={post.Postid} className={classes.root}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image={"data:image/jpeg;base64," + post.ImageId}
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {post.ItemName}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Collection Point: {post.Location}
+                  <br />
+                  Order Confirmation: Confirmed
+                  <br />
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button color="primary" > Cancel Order </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </React.Fragment>
+    );
+  }
+  else {
+    return (
+      <React.Fragment>
+        <Grid item xs={3} className="grid-container">
+          <Card key={post.Postid} className={classes.root}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image={"data:image/jpeg;base64," + post.ImageId}
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {post.ItemName}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Collection Point: {post.Location}
+                  <br />
+                  Order Confirmation: Pending
+                  <br />
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button color="primary"> Cancel Order </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </React.Fragment>
+    );
+  }
+>>>>>>> bdd4e44eb432b3de6222b6ca50e593937d6df086
 }
