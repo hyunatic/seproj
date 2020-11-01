@@ -72,3 +72,19 @@ export const updateDonationPost = (postData) => dispatch => {
         })
         );
 }
+
+export const searchDonationPost = (postData) => dispatch => {
+    fetch('https://ntuseproj.herokuapp.com/api/search_Item', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(postData)
+    })
+        .then(res => res.json())
+        .then(data => dispatch({
+            type: 'SEARCH_DONATION_POST',
+            payload: data
+        })
+        );
+}

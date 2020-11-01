@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 export default function ApprovalCard(props) {
   const { post } = props
-  const { donationposts } = props
+
   const classes = useStyles();
 
   if (!post.OrderConfirm) {
@@ -31,15 +31,11 @@ export default function ApprovalCard(props) {
         <Grid item xs={3} className="grid-container">
           <Card key={post.Postid} className={classes.root}>
             <CardActionArea>
-              {donationposts.filter(x => x.Postid === post.Postid).map(x => {
-                return (
-                  <CardMedia key={x.Postid}
+            <CardMedia key={post.Postid}
                     className={classes.media}
-                    image={"data:image/jpeg;base64," + x.ImageId}
-                    title={x.ItemName}
+                    image={"data:image/jpeg;base64," + post.Itempic}
+                    title={post.ItemName}
                   />
-                )
-              })}
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   {post.ItemName}

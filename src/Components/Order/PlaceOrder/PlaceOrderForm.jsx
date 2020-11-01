@@ -44,7 +44,6 @@ class PlaceOrderForm extends Component {
             Time: new Date().getHours() + ":" + new Date().getMinutes(),
             Location: this.state.address,
             MovingService: this.state.MovingService,
-            //Imageid : val[0].ImageId
         }
         this.props.createDonationOrder(post)
         this.props.history.push("/order")

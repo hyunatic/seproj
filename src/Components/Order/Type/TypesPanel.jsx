@@ -55,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Order(props) {
-  const { donationposts } = props
   const { orderpost } = props
   const {approvalposts} = props
   const classes = useStyles();
@@ -86,7 +85,7 @@ export default function Order(props) {
         </Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {orderpost && orderpost.map(x => {
-            return (<OrderCard key={x.OrderId} post={x} donationposts={donationposts}/>)
+            return (<OrderCard key={x.OrderId} post={x} />)
           })}
         </Grid>
       </TabPanel>
@@ -94,7 +93,7 @@ export default function Order(props) {
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {approvalposts && approvalposts.map(x => {
-            return (<ApproveCard key={x.OrderId} donationposts={donationposts} post={x} />)
+            return (<ApproveCard key={x.OrderId} post={x} />)
           })}
         </Grid>
       </TabPanel>

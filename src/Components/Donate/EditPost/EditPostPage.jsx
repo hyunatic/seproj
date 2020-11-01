@@ -1,55 +1,56 @@
 import React, { Component } from 'react';
-import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 import PrimarySearchAppBar from '../../AppBar/appbar';
 import './EditPost.css'
-import UserPostCard from './UserPostCard'
+import EditPostPanel from './EditPostPanel'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { retrieveUserDonationPost } from '../../../Redux/Actions/DonationAction'
-import Box from '@material-ui/core/Box'
-
+import { viewApproval } from '../../../Redux/Actions/OrderAction'
 
 class EditPostPage extends Component {
     componentDidMount() {
         this.retrieveDetails();
+        this.retrieveApproval();
     }
-    componentDidUpdate(){
-        this.retrieveDetails();
-    }
+    // componentDidUpdate(){
+    //     this.retrieveDetails();
+    //     this.retrieveApproval();
+    // }
     retrieveDetails() {
         const post = {
             username: localStorage.getItem('username')
         }
         this.props.retrieveUserDonationPost(post);
     }
+    retrieveApproval() {
+        const post = {
+            username: localStorage.getItem('username')
+        }
+        this.props.viewApproval(post);
+    }
     render() {
         const { posts } = this.props
+        const { approvalposts } = this.props
         return (
             <div>
                 <Grid>
                     <PrimarySearchAppBar />
                 </Grid>
-                <Card>
-                <br / >
-                <Box fontWeight='fontWeightMedium' display='inline'>Donations</Box>
-                    <Grid container direction="row" justify="center">
-                        {posts && posts.map(x => {
-                            return (<UserPostCard key={x.Postid} post={x} />)
-                        })}
-                    </Grid>
-                    <br/>
-                </Card>
+                <EditPostPanel posts={posts} approvalposts={approvalposts} />
             </div>
         )
     }
 }
 EditPostPage.propTypes = {
-    retrieveUserDonationPost: PropTypes.func.isRequired
+    retrieveUserDonationPost: PropTypes.func.isRequired,
+    viewApproval: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    posts: state.donation.userdonation
+    posts: state.donation.userdonation,
+    approvalposts: state.orders.approvallist,
+    
 });
 
-export default connect(mapStateToProps, { retrieveUserDonationPost })(EditPostPage)
+export default connect(mapStateToProps, { retrieveUserDonationPost, viewApproval })(EditPostPage)

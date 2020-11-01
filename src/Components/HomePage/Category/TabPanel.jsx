@@ -16,7 +16,7 @@ import Homeproducticon from '@material-ui/icons/HotTub';
 import Foodicon from '@material-ui/icons/Cake';
 import Stationeryicon from '@material-ui/icons/Create';
 import Electronicsicon from '@material-ui/icons/Tv';
-import TextField from '@material-ui/core/TextField'
+import SearchBar from './SearchBar'
 import ReviewCard from '../DisplayCard/ReviewCard'
 
 
@@ -95,13 +95,8 @@ export default function CategoryTab(props) {
       </AppBar>
       <TabPanel value={value} index={0}>
         <Box fontWeight='fontWeightMedium' display='inline'>General<br />
-        <TextField id="search" className="input-text" variant="outlined" color="white" label="Search" />
         </Box>
-        <Grid container spacing={1} direction="row" justify="flex-start">
-          {donationposts && donationposts.map(x => {
-            return(<ReviewCard post={x} />)
-          })}
-        </Grid>
+            <SearchBar />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Box margin-marginBottom={2} fontWeight='fontWeightMedium' display='inline'>Women's fashion</Box>

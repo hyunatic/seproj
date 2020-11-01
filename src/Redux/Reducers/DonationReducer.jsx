@@ -1,7 +1,8 @@
 const initState = {
     status: [],
     donationpost: [],
-    userdonation: []
+    userdonation: [],
+    searchresult: []
 };
 
 const DonationReducers = (state = initState, action) => {
@@ -30,6 +31,11 @@ const DonationReducers = (state = initState, action) => {
             return {
                 ...state,
                 status: action.payload
+            }
+        case 'SEARCH_DONATION_POST':
+            return {
+                ...state,
+                searchresult: action.payload
             }
         default:
             return state;
