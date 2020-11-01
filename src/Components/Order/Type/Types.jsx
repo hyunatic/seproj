@@ -29,7 +29,7 @@ class Types extends Component {
         const { approvalposts } = this.props
         return (
             <div>
-                <TypesPanel orderpost={posts} donationposts={donationposts}/>
+                <TypesPanel orderpost={posts} donationposts={donationposts} approvalposts={approvalposts}/>
             </div>
         )
     }

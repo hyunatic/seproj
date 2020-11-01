@@ -39,7 +39,7 @@ export default function ApprovalCard(props) {
                 {post.ItemName}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Request from: {post.PostDate}
+                Request from: {post.req_username}
               </Typography>
             </CardContent>
           </CardActionArea>
