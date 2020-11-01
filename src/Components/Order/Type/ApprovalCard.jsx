@@ -30,7 +30,7 @@ export default function ApprovalCard(props) {
       <Grid item xs={3} className="grid-container">
         <Card key={post.Postid} className={classes.root}>
           <CardActionArea>
-          {donationposts.filter(x => x.Postid === post.Postid).map(x => {
+            {donationposts.filter(x => x.Postid === post.Postid).map(x => {
                 return (
                   <CardMedia key={x.Postid}
                     className={classes.media}

@@ -94,10 +94,10 @@ export default function CategoryTab(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Box fontWeight='fontWeightMedium' display='inline'>General <br />
+        <Box fontWeight='fontWeightMedium' display='inline'>General<br />
         <TextField id="search" className="input-text" variant="outlined" color="white" label="Search" />
         </Box>
-        <Grid container direction="row" justify="space-around" alignItems="center">
+        <Grid container spacing={1} direction="row" alignItems="left">
           {donationposts && donationposts.map(x => {
             return(<ReviewCard post={x} />)
           })}
