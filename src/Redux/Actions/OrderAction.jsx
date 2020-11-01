@@ -60,3 +60,19 @@ export const viewApproval = (postData) => dispatch => {
             })
         );
 }
+
+export const ApproveOrder = (postData) => dispatch => {
+    fetch('https://ntuseproj.herokuapp.com/api/Order_decision', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(postData)
+    })
+        .then(res => res.json())
+        .then(data => dispatch({
+                type: 'APPROVE_ORDER',
+                payload: data
+            })
+        );
+}
