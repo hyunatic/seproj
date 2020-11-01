@@ -1,7 +1,8 @@
 const initState = {
     status: [],
     orderlist: [],
-    approvallist: []
+    approvallist: [],
+    approvalstatus: []
 };
 
 const OrderReducers = (state = initState, action) => {
@@ -25,6 +26,11 @@ const OrderReducers = (state = initState, action) => {
             return {
                 ...state,
                 approvallist: action.payload
+            }
+        case 'VIEW_APPROVAL':
+            return {
+                ...state,
+                approvalstatus: action.payload
             }
         default:
             return state;
