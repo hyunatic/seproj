@@ -8,9 +8,9 @@ export const createDonationOrder = (postData) => dispatch => {
     })
         .then(res => res.json())
         .then(data => dispatch({
-                type: 'CREATE_ORDER',
-                payload: data
-            })
+            type: 'CREATE_ORDER',
+            payload: data
+        })
         );
 }
 
@@ -24,9 +24,9 @@ export const viewDonationOrder = (postData) => dispatch => {
     })
         .then(res => res.json())
         .then(data => dispatch({
-                type: 'VIEW_USER_ORDER',
-                payload: data
-            })
+            type: 'VIEW_USER_ORDER',
+            payload: data
+        })
         );
 }
 export const deleteDonationOrder = (postData) => dispatch => {
@@ -55,9 +55,9 @@ export const viewApproval = (postData) => dispatch => {
     })
         .then(res => res.json())
         .then(data => dispatch({
-                type: 'VIEW_APPROVAL',
-                payload: data
-            })
+            type: 'VIEW_APPROVAL',
+            payload: data
+        })
         );
 }
 
@@ -71,8 +71,17 @@ export const ApproveOrder = (postData) => dispatch => {
     })
         .then(res => res.json())
         .then(data => dispatch({
-                type: 'APPROVE_ORDER',
-                payload: data
-            })
+            type: 'APPROVE_ORDER',
+            payload: data
+        })
+        );
+}
+export const getAddress = (lat, lng) => dispatch => {
+    fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lng + '&result_type=street_address&key=AIzaSyC7GMn4hAF901P06wEIVJuFs2Zdefq0TCY')
+        .then(res => res.json())
+        .then(data => dispatch({
+            type: 'REVERSE_GEOLOCATION',
+            payload: data.results[0].formatted_address
+        })
         );
 }

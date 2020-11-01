@@ -65,6 +65,7 @@ class Donate extends Component {
     componentDidMount() {
         this.setState({ Userid: localStorage.getItem('username') })
     }
+  
 
     render() {
         return (

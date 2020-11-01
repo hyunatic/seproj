@@ -3,7 +3,8 @@ const initState = {
     orderlist: [],
     approvallist: [],
     delstatus: [],
-    approvalstatus: []
+    approvalstatus: [],
+    locAddr: 'NTU Student Care'
 };
 
 const OrderReducers = (state = initState, action) => {
@@ -32,6 +33,11 @@ const OrderReducers = (state = initState, action) => {
             return {
                 ...state,
                 approvalstatus: action.payload
+            }
+        case 'REVERSE_GEOLOCATION':
+            return {
+                ...state,
+                locAddr: action.payload
             }
         default:
             return state;

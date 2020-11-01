@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import PrimarySearchAppBar from '../AppBar/appbar'
 import data from '../../static/data.json'
 
 class GMap extends Component {
@@ -17,8 +16,8 @@ class GMap extends Component {
       return (
         <div style={{
           color: 'white',
-          background: 'grey',
-          padding: '15px 10px',
+          background: 'red',
+          padding: '10px 10px',
           display: 'inline-flex',
           textAlign: 'center',
           alignItems: 'center',
@@ -26,7 +25,6 @@ class GMap extends Component {
           borderRadius: '100%',
           transform: 'translate(-50%, -50%)'
         }}>
-          {text}
         </div>
       )
     };
@@ -38,12 +36,15 @@ class GMap extends Component {
             bootstrapURLKeys={{ key: 'AIzaSyC7GMn4hAF901P06wEIVJuFs2Zdefq0TCY' }}
             defaultCenter={this.props.center}
             defaultZoom={this.props.zoom}
+            onChildClick={(key,childProps) => this.props.getLatLong(childProps.lat, childProps.lng)}
           >
-            {data.map(x =>{
-              return(
-               <AnyReactComponent lat={x.Y} lng={x.X} text={x.Name}/>
-               )} 
-              )}
+
+            {data.map(x => {
+              return (
+                <AnyReactComponent id={"lat:" + x.Y + "long:" + x.X } lat={x.Y} lng={x.X} text={x.Name} key={x.Name} />
+              )
+            }
+            )}
 
           </GoogleMapReact>
         </div>

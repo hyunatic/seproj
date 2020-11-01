@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PrimarySearchAppBar from '../../AppBar/appbar'
 import { connect } from 'react-redux'
 import { retrieveDonationPost } from '../../../Redux/Actions/DonationAction'
-import { createDonationOrder } from '../../../Redux/Actions/OrderAction'
+import { createDonationOrder, getAddress } from '../../../Redux/Actions/OrderAction'
 import PropTypes from 'prop-types'
 import OrderCard from './OrderCard'
 import Box from '@material-ui/core/Box'
@@ -16,49 +16,70 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import './PlaceOrderForm.css';
+import GMap from '../../Map/GMap'
 
 class PlaceOrderForm extends Component {
     state = {
-        address: '',
+        deliveryaddress: '',
         deliverytime: '',
-        MovingService: ''
+        MovingService: 'False',
     }
     componentDidMount() {
         this.props.retrieveDonationPost();
     }
     handleChange = (e) => {
+        alert("test")
         this.setState({
             [e.target.id]: e.target.value
         })
     }
     SelectChange = (e) => {
         this.setState({ MovingService: e.target.value })
+        if(this.state.MovingService == 'False'){
+            this.setState({deliveryaddress: 'NTU Student Care'})
+        }
     }
     onSubmit = (val) => {
-        console.log(val)
         const post = {
             Postid: val[0].Postid,
             req_Userid: "1",
             req_username: localStorage.getItem('username'),
             Date: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate(),
             Time: new Date().getHours() + ":" + new Date().getMinutes(),
-            Location: this.state.address,
+            Location: this.props.addr,
             MovingService: this.state.MovingService,
         }
         this.props.createDonationOrder(post)
         this.props.history.push("/order")
     }
+    getLatLong = (lat, lng) => {
+        //Gets Lat and Long from Child Component
+        //Do Reverse Geo Location
+        this.props.getAddress(parseFloat(lat).toFixed(5),parseFloat(lng).toFixed(5))
+    }  
 
     render() {
         const { posts } = this.props
+        const { addr } = this.props
         var id = parseInt(this.props.match.params.id)
+        let googleMap = (this.state.MovingService == 'False') ? <React.Fragment> </React.Fragment> : <Grid container direction="row" justify="center" alignItems="start">
+            <Grid item xs={10}>
+                <Card>
+                    <CardContent>
+                    <Box fontWeight='fontWeightMedium' display='inline'>List of Student Care Centres</Box>
+                        <GMap getLatLong={this.getLatLong}/>
+                    </CardContent>
+                </Card>
+            </Grid>
+        </Grid>;
+
         return (
             <div>
                 <PrimarySearchAppBar />
                 <br></br>
                 <Box fontWeight='fontWeightMedium' display='inline'>My Order</Box>
-                <Grid container direction="row" justify="center" alignItems="start" classname="grid-container">
-                    <Grid item xs={2}>
+                <Grid container direction="row" justify="center" alignItems="start" className="grid-container">
+                    <Grid item xs={3}>
                         {posts && posts.filter(x => x.Postid === id).map(x => {
                             return (<OrderCard key={x.Postid} post={x} />)
                         })}
@@ -69,7 +90,7 @@ class PlaceOrderForm extends Component {
                                 <Grid>
                                     <form noValidate autoComplete="off">
                                         <Grid >
-                                            <TextField fullWidth onChange={this.handleChange} id="address" variant="outlined" color="white" label="Delivery Address" />
+                                            <TextField fullWidth id="deliveryaddress" disabled variant="outlined" color="white" label="Delivery Address" value={addr}/>
                                         </Grid>
                                         <br />
                                         <Grid >
@@ -94,6 +115,7 @@ class PlaceOrderForm extends Component {
                             </CardContent>
                         </Card>
                     </Grid>
+                    {googleMap}
                 </Grid>
             </div>
         )
@@ -101,11 +123,13 @@ class PlaceOrderForm extends Component {
 }
 PlaceOrderForm.propTypes = {
     retrieveDonationPost: PropTypes.func.isRequired,
-    createDonationOrder: PropTypes.func.isRequired
+    createDonationOrder: PropTypes.func.isRequired,
+    getAddress: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
     posts: state.donation.donationpost,
-    order: state.orders.status
+    order: state.orders.status,
+    addr: state.orders.locAddr
 });
-export default connect(mapStateToProps, { retrieveDonationPost, createDonationOrder })(PlaceOrderForm)
+export default connect(mapStateToProps, { getAddress, retrieveDonationPost, createDonationOrder })(PlaceOrderForm)
