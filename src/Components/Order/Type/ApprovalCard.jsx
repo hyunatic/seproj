@@ -23,7 +23,6 @@ const useStyles = makeStyles({
 export default function ApprovalCard(props) {
   const { post } = props
   const { donationposts } = props
-  console.log(post)
   const classes = useStyles();
 
   if (!post.OrderConfirm) {
