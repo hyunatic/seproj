@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import DeleteOrder from './DeleteOrder';
 
 
 const useStyles = makeStyles({
@@ -21,6 +22,7 @@ const useStyles = makeStyles({
 
 export default function OrderCard(props) {
   const { post } = props
+  console.log(post)
   const { donationposts } = props
   const classes = useStyles();
 
@@ -48,7 +50,7 @@ export default function OrderCard(props) {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button color="primary" > Cancel Order </Button>
+              <Button color="primary">Cancel Order</Button>
             </CardActions>
           </Card>
         </Grid>
@@ -79,7 +81,7 @@ export default function OrderCard(props) {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button color="primary"> Cancel Order </Button>
+              <DeleteOrder orderid={post.Postid}/>
             </CardActions>
           </Card>
         </Grid>

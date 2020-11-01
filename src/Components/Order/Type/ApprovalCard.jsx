@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom'
-
+import ApprovalOrder from './ApprovalOrder'
 
 const useStyles = makeStyles({
   root: {
@@ -44,7 +44,7 @@ export default function ApprovalCard(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button color="primary"> Approve </Button>
+            <ApprovalOrder />
           </CardActions>
         </Card>
       </Grid>
