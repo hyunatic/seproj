@@ -2,7 +2,8 @@ const initState = {
     status: [],
     orderlist: [],
     approvallist: [],
-    delstatus: []
+    delstatus: [],
+    approvalstatus: []
 };
 
 const OrderReducers = (state = initState, action) => {

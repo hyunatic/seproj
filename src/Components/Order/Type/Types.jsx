@@ -13,7 +13,6 @@ class Types extends Component {
     }
     // componentDidUpdate(){
     //     this.retrieveDetails();
-    //     this.props.retrieveDonationPost();
     //     this.retrieveApproval();
     // }
     retrieveDetails() {
