@@ -22,18 +22,23 @@ const useStyles = makeStyles({
 
 export default function ApprovalCard(props) {
   const { post } = props
+  const { donationposts } = props
   const classes = useStyles();
-  
+
   return (
     <React.Fragment>
       <Grid item xs={3} className="grid-container">
         <Card key={post.Postid} className={classes.root}>
           <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              image={"data:image/jpeg;base64," + post.ImageId}
-              title="Contemplative Reptile"
-            />
+          {donationposts.filter(x => x.Postid === post.Postid).map(x => {
+                return (
+                  <CardMedia key={x.Postid}
+                    className={classes.media}
+                    image={"data:image/jpeg;base64," + x.ImageId}
+                    title={x.ItemName}
+                  />
+                )
+              })}
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
                 {post.ItemName}
