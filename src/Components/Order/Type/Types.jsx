@@ -3,7 +3,7 @@ import TypesPanel from './TypesPanel'
 import { connect } from 'react-redux'
 import { viewDonationOrder } from '../../../Redux/Actions/OrderAction'
 import { retrieveDonationPost } from '../../../Redux/Actions/DonationAction'
-import { viewApproval } from '../../../Redux/Actions/DonationAction'
+import { viewApproval } from '../../../Redux/Actions/OrderAction'
 import PropTypes from 'prop-types'
 import { compose } from 'redux'
 
