@@ -20,6 +20,11 @@ const OrderReducers = (state = initState, action) => {
                 ...state,
                 status: action.payload
             }
+        case 'VIEW_APPROVAL':
+            return {
+                ...state,
+                status: action.payload
+            }
         default:
             return state;
     }

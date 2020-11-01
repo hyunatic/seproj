@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom'
-import { deleteDonationOrder } from '../../../Redux/Actions/OrderAction';
 
 
 const useStyles = makeStyles({
@@ -21,10 +20,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OrderCard(props) {
+export default function ApprovalCard(props) {
   const { post } = props
   const classes = useStyles();
-
+  
   return (
     <React.Fragment>
       <Grid item xs={3} className="grid-container">
@@ -40,13 +39,12 @@ export default function OrderCard(props) {
                 {post.ItemName}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Posted on: {post.PostDate} By: {post.Username}
+                Request from: {post.PostDate}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button color="primary"> View</Button>
-            <Button color="primary"> Delete </Button>
+            <Button color="primary"> Approve </Button>
           </CardActions>
         </Card>
       </Grid>
