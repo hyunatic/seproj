@@ -131,7 +131,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <Link className="removeHyperlinkB" to="/profile"><MenuItem>Profile</MenuItem></Link>
-      <Link className="removeHyperlinkB" to="/editpost" ><MenuItem>Edit My Donations</MenuItem></Link>
+      <Link className="removeHyperlinkB" to="/editpost" ><MenuItem>My Donations</MenuItem></Link>
       <Link className="removeHyperlinkB" to="/Order" ><MenuItem>My Orders</MenuItem></Link>
       <MenuItem onClick={Logout}>Logout</MenuItem>  
     </Menu>
@@ -155,7 +155,7 @@ export default function PrimarySearchAppBar() {
         <p>Profile</p>
         </MenuItem>
       </Link>
-      <Link className="removeHyperlinkB" to="/editpost"><MenuItem>Edit My Donations</MenuItem></Link>
+      <Link className="removeHyperlinkB" to="/editpost"><MenuItem>My Donations</MenuItem></Link>
       <Link className="removeHyperlinkB" to="/Order" ><MenuItem>My Orders</MenuItem></Link>
       <MenuItem onClick={Logout}>
         <p>Logout</p>

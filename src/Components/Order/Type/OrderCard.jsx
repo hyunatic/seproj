@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom'
+import { deleteDonationOrder } from '../../../Redux/Actions/OrderAction';
 
 
 const useStyles = makeStyles({
@@ -23,6 +24,15 @@ const useStyles = makeStyles({
 export default function ReviewCard(props) {
   const { post } = props
   const classes = useStyles();
+
+
+  function DeletePost(val) {
+       const post = {
+           Postid: val
+       }
+       this.setState({deleteStatus: true})
+       this.props.deleteDonationPost(post);
+      }
   return (
     <React.Fragment>
       <Grid item xs={3} className="grid-container">
@@ -44,7 +54,7 @@ export default function ReviewCard(props) {
           </CardActionArea>
           <CardActions>
               <Button color="primary"> View</Button>
-          <Button color="primary"> Delete </Button>
+          <Button color="primary" > Delete </Button>
 
           </CardActions>
         </Card>

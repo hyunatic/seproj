@@ -32,7 +32,7 @@ class EditPostPage extends Component {
                 </Grid>
                 <Card>
                 <br / >
-                <Box fontWeight='fontWeightMedium' display='inline'>Order Details</Box>
+                <Box fontWeight='fontWeightMedium' display='inline'>Donations</Box>
                     <Grid container direction="row" justify="center">
                         {posts && posts.map(x => {
                             return (<UserPostCard key={x.Postid} post={x} />)

@@ -79,7 +79,7 @@ export default function Order(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Box fontWeight='fontWeightMedium' display='inline'>My Order<br />
+        <Box fontWeight='fontWeightMedium' display='inline'>Orders<br />
         </Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {orderpost && orderpost.map(x => {
