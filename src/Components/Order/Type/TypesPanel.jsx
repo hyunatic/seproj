@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import ViewAgendaIcon from '@material-ui/icons/ViewAgenda';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import OrderCard from './OrderCard'
+import ApproveCard from './ApprovalCard'
 
 function TabPanel(props) {
   const { children, value, index, donationposts, ...other } = props;
@@ -90,7 +91,9 @@ export default function Order(props) {
       <TabPanel value={value} index={1}>
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
-          test12
+          {orderpost && orderpost.map(x => {
+            return (<ApproveCard post={x} />)
+          })}
         </Grid>
       </TabPanel>
     </div>

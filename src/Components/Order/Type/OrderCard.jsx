@@ -19,9 +19,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ReviewCard(props) {
+export default function OrderCard(props) {
   const { post } = props
-  console.log(post)
+  //console.log(post)
   const classes = useStyles();
 
   if (post.OrderConfirm) {
