@@ -15,6 +15,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import Logo from '../../img/icon.png'; //need to fix link to get from src/img/icon.png
+import { Hidden } from '@material-ui/core';
 
 class RegisterForm extends Component {
     state = {
@@ -90,7 +91,8 @@ class RegisterForm extends Component {
         var visibilityState1 = this.state.passworderror ? "visible" : "hidden";
         var visibilityState2 = this.state.emailerror ? "visible" : "hidden";
         var visibilityState3 = this.state.schemailerror ? "visible" : "hidden";
-        return (
+        var emailcheck = (this.state.emailerror || this.state.schemailerror);
+        return ( 
             <div class="Center">
                 <Card>
                     <CardContent>
@@ -100,17 +102,17 @@ class RegisterForm extends Component {
                                     <img src={Logo} alt="none" />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" label="Username" />
+                                    <TextField onChange={this.handleChange} error={this.state.usernameerror} id="username" required  className="input-text" variant="outlined" color="white" label="Username" />
                                     <p style={{ visibility: visibilityState, color: "red" }}>Username cannot be blank</p>
                                 </Grid>
                                 <br />
                                 <Grid item xs={12}>
-                                    <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
+                                    <TextField onChange={this.handleChange} id="password" error={this.state.passworderror} required variant="outlined" type="password" label="Password" />
                                     <p style={{ visibility: visibilityState1, color: "red" }}>Password cannot be blank</p>
                                 </Grid>
                                 <br />
                                 <Grid>
-                                    <TextField onChange={this.handleChange} id="email" className="input-text" variant="outlined" color="white" label="Email" />
+                                    <TextField onChange={this.handleChange} id="email" error={emailcheck} required className="input-text" variant="outlined" color="white" label="Email" />
                                     <p style={{ visibility: visibilityState2, color: "red" }}>Email cannot be blank</p>
                                     <p style={{ visibility: visibilityState3, color: "red" }}>Please enter an NTU Email</p>
                                 </Grid>
