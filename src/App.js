@@ -13,6 +13,8 @@ import "./index.css";
 import DeletePost from './Components/Donate/DeletePost/DeletePost';
 import OrderPage from './Components/Order/OrderPage'
 import PlaceOrderForm from './Components/Order/PlaceOrder/PlaceOrderForm';
+import Refresher from './Components/Refresher/Refresher';
+import EditForm from './Components/Donate/EditPost/EditForm';
 
 function App() {
   return (
@@ -28,8 +30,10 @@ function App() {
             <Route path="/profile" component={Profile}/>
             <Route path="/editpost" component={EditPostPage}/>
             <Route path="/deletepost/:id" component={DeletePost} />
+            <Route path="/editform/:id" component={EditForm} />
             <Route path="/placeOrder/:id" component={PlaceOrderForm} />
             <Route path="/Order" component={OrderPage} />
+            <Route path="/refresh/:id" component={Refresher} />
           </Switch>
         </div>
       </BrowserRouter>

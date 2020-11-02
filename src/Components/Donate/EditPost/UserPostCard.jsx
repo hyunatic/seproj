@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom'
-import EditModal from './EditModal'
 
 const useStyles = makeStyles({
   root: {
@@ -43,7 +42,11 @@ export default function UserPostCard(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <EditModal post={post}/>
+            <Link to={"/editform/" + post.Postid}>
+              <Button size="small" color="primary">
+                Edit
+          </Button>
+            </Link>
             <Link to={"/deletePost/" + post.Postid}>
               <Button size="small" color="primary">
                 Delete

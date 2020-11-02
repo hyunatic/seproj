@@ -5,15 +5,12 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 class DeleteOrder extends Component {
-    constructor(props){
-        super(props);
-    }
-    onSubmit = () =>{
+    onSubmit = () => {
         const post = {
             OrderId: this.props.orderid
         }
+        console.log(this.props)
         this.props.deleteDonationOrder(post)
-        window.location.reload()
     }
     render() {
         return (

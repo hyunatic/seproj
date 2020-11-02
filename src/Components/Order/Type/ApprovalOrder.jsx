@@ -4,10 +4,12 @@ import { ApproveOrder } from '../../../Redux/Actions/OrderAction'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
+
 class ApprovalOrder extends Component {
     constructor(props)
     { 
         super(props);
+        this.onSubmit = this.onSubmit.bind(this)
     }
     onSubmit = () => {
         const post = {
@@ -15,7 +17,6 @@ class ApprovalOrder extends Component {
             OrderConfirm: "True"
         };
         this.props.ApproveOrder(post)
-        window.location.reload()
     }
     render() {
         return (
