@@ -60,13 +60,11 @@ export default function CardModal(props) {
                 <Fade in={open}>
                     <Card>
                         <CardContent>
-                            <Grid container spacing={2}>
-                                <Grid item>
+                            <Grid container sm={12}>
+                                <Grid item xs={6}>
                                     <img src={"data:image/jpeg;base64," + post.ImageId } alt=""/>
                                 </Grid>
-                                <Grid item xs={12} sm container>
-                                    <Grid item xs container direction="column" spacing={2}>
-                                        <Grid item xs>
+                                    <Grid item xs={6} direction="column">
                                             <Typography gutterBottom variant="subtitle1">
                                                 <h2 id="transition-modal-title">{post.ItemName}</h2>
                                             </Typography>
@@ -77,9 +75,7 @@ export default function CardModal(props) {
                                                     Posted by: {post.Username}
                                                 </p>
                                             </Typography>
-                                        </Grid>
                                     </Grid>
-                                </Grid>
                             </Grid>
                         </CardContent>
                     </Card>

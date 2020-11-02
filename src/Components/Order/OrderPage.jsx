@@ -20,7 +20,7 @@ export default class OrderPage extends Component {
       handleSubmit(event) {
         event.preventDefault();
       }
-    
+      
     render() {
         const { post } = this.props
         return (
