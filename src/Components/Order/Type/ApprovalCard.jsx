@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 
 export default function ApprovalCard(props) {
   const { post } = props
-
+  const { route } = props
   const classes = useStyles();
 
   if (!post.OrderConfirm) {
@@ -44,7 +44,7 @@ export default function ApprovalCard(props) {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <ApprovalOrder post={post.OrderId} />
+              <ApprovalOrder route={route} post={post.OrderId} />
             </CardActions>
           </Card>
         </Grid>

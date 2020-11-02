@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Order(props) {
   const { orderpost } = props
   const {approvalposts} = props
+  const { route } = props
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -85,7 +86,7 @@ export default function Order(props) {
         </Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {orderpost && orderpost.map(x => {
-            return (<OrderCard key={x.OrderId} post={x} />)
+            return (<OrderCard route={route} key={x.OrderId} post={x} />)
           })}
         </Grid>
       </TabPanel>
@@ -93,7 +94,7 @@ export default function Order(props) {
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="space-around" alignItems="center">
           {approvalposts && approvalposts.map(x => {
-            return (<ApproveCard key={x.OrderId} post={x} />)
+            return (<ApproveCard route={route} key={x.OrderId} post={x} />)
           })}
         </Grid>
       </TabPanel>

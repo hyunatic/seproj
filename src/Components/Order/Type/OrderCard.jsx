@@ -23,6 +23,7 @@ const useStyles = makeStyles({
 export default function OrderCard(props) {
   const { post } = props
   const classes = useStyles();
+  const { route } = props
 
   if (post.OrderConfirm) {
     return (
@@ -78,7 +79,7 @@ export default function OrderCard(props) {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <DeleteOrder orderid={post.OrderId} />
+              <DeleteOrder route={route} orderid={post.OrderId} />
             </CardActions>
           </Card>
         </Grid>

@@ -15,23 +15,25 @@ export default class OrderPage extends Component {
         req_Userid: ''
     }
     handleChange(event) {
-        this.setState({[event.target.id]: event.target.value});
-      }
-      handleSubmit(event) {
+        this.setState({ [event.target.id]: event.target.value });
+    }
+    handleSubmit(event) {
         event.preventDefault();
-      }
-      
+    }
+    Route = (val) =>{
+        this.props.history.push('/refresh/' + val)
+    }
     render() {
         const { post } = this.props
         return (
             <div>
                 <Grid container>
                     <Grid xs={12}>
-                        <PrimarySearchAppBar/>
+                        <PrimarySearchAppBar />
                     </Grid>
                     <br />
                     <Grid xs={12}>
-                        <Types />
+                        <Types route={this.Route}/>
                     </Grid>
                 </Grid>
             </div>

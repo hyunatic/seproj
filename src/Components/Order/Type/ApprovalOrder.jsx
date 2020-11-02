@@ -17,6 +17,9 @@ class ApprovalOrder extends Component {
             OrderConfirm: "True"
         };
         this.props.ApproveOrder(post)
+        //Do loading here
+
+        this.props.route("order")
     }
     render() {
         return (

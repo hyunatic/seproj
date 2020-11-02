@@ -11,6 +11,8 @@ class DeleteOrder extends Component {
         }
         console.log(this.props)
         this.props.deleteDonationOrder(post)
+        //Do loading here
+        this.props.route("order")
     }
     render() {
         return (

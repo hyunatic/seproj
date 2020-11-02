@@ -24,9 +24,10 @@ class Types extends Component {
     render() {
         const { posts } = this.props
         const { approvalposts } = this.props
+        const { route } = this.props
         return (
             <div>
-                <TypesPanel orderpost={posts} approvalposts={approvalposts}/>
+                <TypesPanel route={route} orderpost={posts} approvalposts={approvalposts}/>
             </div>
         )
     }
