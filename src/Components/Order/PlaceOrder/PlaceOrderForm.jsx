@@ -90,7 +90,7 @@ class PlaceOrderForm extends Component {
                                 <Grid>
                                     <form noValidate autoComplete="off">
                                         <Grid >
-                                            <TextField fullWidth id="deliveryaddress" disabled variant="outlined" color="white" label="Delivery Address" value={addr}/>
+                                            <TextField fullWidth id="deliveryaddress" disabled variant="outlined" color="white" label="Collection Address" value={addr}/>
                                         </Grid>
                                         <br />
                                         <Grid >
