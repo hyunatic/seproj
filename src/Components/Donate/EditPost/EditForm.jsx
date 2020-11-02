@@ -44,12 +44,7 @@ class EditForm extends Component {
         PostDate: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate()
     }
     this.props.updateDonationPost(post)
-  }
-  componentDidUpdate(nextProps){
-    var status = nextProps.donationpoststatus.Result;
-        if(status === 1)
-          window.location.reload();
-            
+    window.location.reload();
   }
   render() {
     const { post } = this.props
