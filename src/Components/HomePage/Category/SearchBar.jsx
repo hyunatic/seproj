@@ -33,7 +33,6 @@ class SearchBar extends Component {
             searchArg: this.state.searchString,
             searchOrd: this.state.sortBy
         }
-        console.log(posts)
         this.props.searchDonationPost(posts)
     }
     componentDidMount() {
@@ -58,8 +57,8 @@ class SearchBar extends Component {
                     <Grid item md={3}>
                         <InputLabel id="label">Sort By:</InputLabel>
                         <Select style={{ width: "100%" }} onChange={this.SelectChange1} labelId="label" id="Hall" value={this.state.sortBy}>
-                            <MenuItem value={'ASC'}>A - Z</MenuItem>
-                            <MenuItem value={'DESC'}>Z - A</MenuItem>
+                            <MenuItem value={'ASC'}>Newest</MenuItem>
+                            <MenuItem value={'DESC'}>Oldest</MenuItem>
                         </Select>
                     </Grid>
                     <Grid item md={2}>

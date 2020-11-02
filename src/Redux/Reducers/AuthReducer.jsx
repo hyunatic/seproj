@@ -1,19 +1,25 @@
 const initState = {
     status: [],
-    registerstatus:[]
+    registerstatus: [],
+    updatestatus: []
 };
 
 const AuthReducers = (state = initState, action) => {
-    switch(action.type){
+    switch (action.type) {
         case 'LOGIN_CHECK':
-            return{
+            return {
                 ...state,
                 status: action.payload
             }
         case 'REGISTER_USER':
-            return{
+            return {
                 ...state,
                 registerstatus: action.payload
+            }
+        case 'UPDATE_PROFILE':
+            return {
+                ...state,
+                updatestatus: action.payload
             }
         default:
             return state;

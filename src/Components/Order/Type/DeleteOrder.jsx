@@ -13,6 +13,7 @@ class DeleteOrder extends Component {
             OrderId: this.props.orderid
         }
         this.props.deleteDonationOrder(post)
+        window.location.reload()
     }
     render() {
         return (

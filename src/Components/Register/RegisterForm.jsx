@@ -21,13 +21,45 @@ class RegisterForm extends Component {
         username: '',
         password: '',
         email: '',
-        Hall: '',
-        buttondisabled: true
+        Hall: '1',
+        buttondisabled: true,
+        usernameerror: false,
+        passworderror: false,
+        emailerror: false,
+        schemailerror: false
     }
-    onSubmit = (e) => {
-        e.preventDefault();
-        if (this.state.username === "" || this.state.password === "" || this.state.email === "") {
-            alert("Username / email / password cannot be blank")
+    onSubmit = () => {
+        if (this.state.username === "") {
+            this.setState({
+                usernameerror : true,
+                passworderror : false,
+                emailerror: false,
+                schemailerror: false
+            })
+        }
+        else if(this.state.password === ""){
+            this.setState({
+                usernameerror: false,
+                passworderror : true,
+                emailerror: false,
+                schemailerror: false
+            })
+        }
+        else if(this.state.email === ""){
+            this.setState({
+                usernameerror : false,
+                passworderror : false,
+                emailerror: true,
+                schemailerror: false
+            })
+        }
+        else if(!this.state.email.includes("@e.ntu.edu.sg")){
+            this.setState({
+                usernameerror : false,
+                passworderror : false,
+                emailerror: false,
+                schemailerror: true
+            })
         }
         else {
             const post = {
@@ -40,9 +72,6 @@ class RegisterForm extends Component {
         }
     }
     componentWillReceiveProps(nextProps) {
-        // Need to do validation
-        //console.log(nextProps.registerstatus)
-        //var status = nextProps.registerstatus
         this.props.history.push('/');
     }
     handleChange = (e) => {
@@ -57,6 +86,10 @@ class RegisterForm extends Component {
         this.setState({ buttondisabled: !this.state.buttondisabled });
     }
     render() {
+        var visibilityState = this.state.usernameerror ? "visible" : "hidden";
+        var visibilityState1 = this.state.passworderror ? "visible" : "hidden";
+        var visibilityState2 = this.state.emailerror ? "visible" : "hidden";
+        var visibilityState3 = this.state.schemailerror ? "visible" : "hidden";
         return (
             <div class="Center">
                 <Card>
@@ -68,17 +101,21 @@ class RegisterForm extends Component {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" label="Username" />
+                                    <p style={{ visibility: visibilityState, color: "red" }}>Username cannot be blank</p>
                                 </Grid>
                                 <br />
                                 <Grid item xs={12}>
                                     <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
+                                    <p style={{ visibility: visibilityState1, color: "red" }}>Password cannot be blank</p>
                                 </Grid>
                                 <br />
                                 <Grid>
                                     <TextField onChange={this.handleChange} id="email" className="input-text" variant="outlined" color="white" label="Email" />
+                                    <p style={{ visibility: visibilityState2, color: "red" }}>Email cannot be blank</p>
+                                    <p style={{ visibility: visibilityState3, color: "red" }}>Please enter an NTU Email</p>
                                 </Grid>
                                 <br />
-                                <Grid item xs={6}>
+                                <Grid item xs={12}>
                                     <InputLabel id="label">Hall</InputLabel>
                                     <Select style={{ width: "100%" }} onChange={this.SelectChange} labelId="label" id="Hall" value={this.state.Hall}>
                                         <MenuItem value={'1'}>1</MenuItem>

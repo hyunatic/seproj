@@ -19,25 +19,29 @@ class LoginForm extends Component {
         status: '',
         error: false
     }
-    onSubmit = (e) => {
-        e.preventDefault();
+    onSubmit = () => {
         const post = {
-            username : this.state.username,
-            password : this.state.password
+            username: this.state.username,
+            password: this.state.password
         };
-        this.props.checkLogin(post); 
+        this.props.checkLogin(post);
     }
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         var status = nextProps.loginstatus.Result
-        if(status === 0){
-            this.setState({error : true})
+        if (status === 0) {
+            this.setState({ error: true })
         }
-        else{
+        else {
             localStorage.setItem('email', nextProps.loginstatus.email)
             localStorage.setItem('username', nextProps.loginstatus.username);
+            localStorage.setItem('hall', nextProps.loginstatus.Hall);
             this.props.history.push('/home');
         }
+    }
+    checkKey = (e) => {
+        if(e.key === 'Enter')
+            this.onSubmit()
     }
 
     handleChange = (e) => {
@@ -49,44 +53,44 @@ class LoginForm extends Component {
         var visibilityState = this.state.error ? "visible" : "hidden";
         return (
             <React.Fragment>
-                <div class="Login">    
-                <Card>
-                    <CardContent>
-                        <Grid container direction="row" justify="center" alignItems="center">
-                            <form noValidate autoComplete="off">
-                                <Grid>
-                                    <img src={Logo} alt=""/>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" label="Username" />
-                                </Grid>
-                                <br />
-                                <Grid item xs={12}>
-                                    <TextField onChange={this.handleChange} id="password" variant="outlined" type="password" label="Password" />
-                                </Grid>
-                                <br />
-                                <p style={{visibility: visibilityState, color: "red"}}>Wrong Username or Password</p>
-                                <Grid container item alignitem="center" justify="center">
-                                <Grid xs={6}>
-                                    <Button onClick={this.onSubmit} variant="contained" color="primary">Login</Button>
-                                </Grid>
-                                </Grid>
-                                <br/><br/>
-                                <Grid container item alignitem="center" justify="center">
+                <div class="Login">
+                    <Card>
+                        <CardContent>
+                            <Grid container direction="row" justify="center" alignItems="center">
+                                <form noValidate autoComplete="off">
+                                    <Grid>
+                                        <img src={Logo} alt="" />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField onChange={this.handleChange} onKeyDown={this.checkKey} id="username" className="input-text" variant="outlined" color="white" label="Username" />
+                                    </Grid>
+                                    <br />
+                                    <Grid item xs={12}>
+                                        <TextField onChange={this.handleChange} onKeyDown={this.checkKey} id="password" variant="outlined" type="password" label="Password" />
+                                    </Grid>
+                                    <br />
+                                    <p style={{ visibility: visibilityState, color: "red" }}>Wrong Username or Password</p>
+                                    <Grid container item alignitem="center" justify="center">
+                                        <Grid xs={6}>
+                                            <Button onClick={this.onSubmit} variant="contained" color="primary">Login</Button>
+                                        </Grid>
+                                    </Grid>
+                                    <br /><br />
+                                    <Grid container item alignitem="center" justify="center">
                                         <p>Forget Password</p>
-                                </Grid>
-                            </form>
-                        </Grid>
-                    </CardContent>
-                </Card>
+                                    </Grid>
+                                </form>
+                            </Grid>
+                        </CardContent>
+                    </Card>
                 </div>
                 <div class="Bottom">
                     <Card>
                         <CardContent>
                             <Grid container item direction="row" alignitem="center" justify="center">
                                 Don't have an account? &nbsp;
-                                <Link className ="removeHyperlink" to="/register">
-                                Sign up
+                                <Link className="removeHyperlink" to="/register">
+                                    Sign up
                                 </Link>
                             </Grid>
                         </CardContent>

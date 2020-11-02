@@ -59,6 +59,7 @@ export default function EditPostPanel(props) {
     const { approvalposts } = props
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
+    const user = localStorage.getItem('username')
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -84,7 +85,7 @@ export default function EditPostPanel(props) {
                 <Box fontWeight='fontWeightMedium' display='inline'>My Posting<br />
                 </Box>
                 <Grid container direction="row" justify="space-around" alignItems="center">
-                    {posts && posts.map(x => {
+                    {posts && posts.filter(x => x.Username === user).map(x => {
                         return (<UserPostCard key={x.Postid} post={x} />)
                     })}
                 </Grid>

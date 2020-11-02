@@ -9,10 +9,6 @@ class Types extends Component {
         this.retrieveDetails();
         this.retrieveApproval();
     }
-    // componentDidUpdate(){
-    //     this.retrieveDetails();
-    //     this.retrieveApproval();
-    // }
     retrieveDetails() {
         const post = {
             username: localStorage.getItem('username')
@@ -37,7 +33,6 @@ class Types extends Component {
 }
 Types.propTypes = {
     viewDonationOrder: PropTypes.func.isRequired,
-    retrieveDonationPost: PropTypes.func.isRequired,
     viewApproval: PropTypes.func.isRequired
 }
 
