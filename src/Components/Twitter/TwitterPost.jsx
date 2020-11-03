@@ -39,7 +39,7 @@ function TwitterPost({info}) {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          <a href={info.entities.urls[0].url}>Share</a>
+          <a href="https://twitter.com/NTUsg">View</a>
         </Button>
       </CardActions>
     </Card>

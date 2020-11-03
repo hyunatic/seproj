@@ -8,6 +8,7 @@ import InputBase from '@material-ui/core/InputBase';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import TwitterIcon from '@material-ui/icons/Twitter';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import AddIcon from '@material-ui/icons/Add';
@@ -179,6 +180,10 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <div className={classes.padds}>
+            <Link className="removeHyperlink" to="/ntunews"><IconButton color="inherit" aria-label="add">
+              <TwitterIcon />
+            </IconButton>
+            </Link>
             <Link className="removeHyperlink" to="/donate"><IconButton color="inherit" aria-label="add">
               <AddIcon />
             </IconButton>
@@ -197,6 +202,10 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.sectionMobile}>
             <div className={classes.padds}>
+            <Link className="removeHyperlink" to="/ntunews"><IconButton color="inherit" aria-label="add">
+              <TwitterIcon />
+            </IconButton>
+            </Link>
             <Link className="removeHyperlink" to="/donate"><IconButton to="/donate" color="inherit" aria-label="add">
               <AddIcon />
             </IconButton>

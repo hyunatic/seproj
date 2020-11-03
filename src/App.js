@@ -15,6 +15,7 @@ import OrderPage from './Components/Order/OrderPage'
 import PlaceOrderForm from './Components/Order/PlaceOrder/PlaceOrderForm';
 import Refresher from './Components/Refresher/Refresher';
 import EditForm from './Components/Donate/EditPost/EditForm';
+import Twitter from './Components/Twitter/Twitter'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/placeOrder/:id" component={PlaceOrderForm} />
             <Route path="/Order" component={OrderPage} />
             <Route path="/refresh/:id" component={Refresher} />
+            <Route path="/ntunews" component={Twitter} />
           </Switch>
         </div>
       </BrowserRouter>
