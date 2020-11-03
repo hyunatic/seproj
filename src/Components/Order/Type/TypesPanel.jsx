@@ -85,7 +85,7 @@ export default function Order(props) {
       <TabPanel value={value} index={0}>
         <Box fontWeight='fontWeightMedium' display='inline'>Orders</Box>
         <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
-          {orderpost && orderpost.map(x => {
+          {orderpost && orderpost.filter(x => x.OrderConfirm === false).map(x => {
             return (<DisplayOrderCard route={route} key={x.OrderId} post={x} />)
           })}
         </Grid>
