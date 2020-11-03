@@ -58,7 +58,7 @@ export default function DisplayOrderCard(props) {
   else {
     return (
       <React.Fragment>
-        <Grid item xs={4} className="grid-container">
+        <Grid item lg={3} className="grid-container">
           <Card key={post.Postid} className={classes.root}>
             <CardActionArea>
             <CardMedia key={post.Postid}
