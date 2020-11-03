@@ -41,7 +41,6 @@ export const updateProfile = (postData) => dispatch => {
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             dispatch({
             type: 'UPDATE_PROFILE',
             payload: data

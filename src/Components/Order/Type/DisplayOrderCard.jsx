@@ -71,7 +71,7 @@ export default function DisplayOrderCard(props) {
                   {post.ItemName}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Collection Point: {post.Location} {post.OrderId}
+                  Collection Point: {post.Location} 
                   <br />
                   Order Confirmation: Pending 
                 </Typography>

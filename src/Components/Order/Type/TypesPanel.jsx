@@ -60,7 +60,7 @@ export default function Order(props) {
   const { route } = props
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -77,19 +77,28 @@ export default function Order(props) {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          <Tab label="My Orders" icon={<ViewAgendaIcon />} {...a11yProps(0)} />
-          <Tab label="Approvals" icon={<CheckCircleOutlineIcon />} {...a11yProps(1)} />
+          <Tab label="Pending Orders" icon={<ViewAgendaIcon />} {...a11yProps(0)} />
+          <Tab label="Approved Orders" icon={<ViewAgendaIcon />} {...a11yProps(1)} />
+          <Tab label="Approvals" icon={<CheckCircleOutlineIcon />} {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Box fontWeight='fontWeightMedium' display='inline'>Orders</Box>
+        <Box fontWeight='fontWeightMedium' display='inline'>Pending Orders</Box>
         <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
-          {orderpost && orderpost.map(x => {
+          {orderpost && orderpost.filter(x => x.OrderConfirm === false).map(x => {
             return (<DisplayOrderCard route={route} key={x.OrderId} post={x} />)
           })}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
+        <Box fontWeight='fontWeightMedium' display='inline'>Approved Orders</Box>
+        <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
+          {orderpost && orderpost.filter(x => x.OrderConfirm === true).map(x => {
+            return (<DisplayOrderCard route={route} key={x.OrderId} post={x} />)
+          })}
+        </Grid>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
           {approvalposts && approvalposts.map(x => {
