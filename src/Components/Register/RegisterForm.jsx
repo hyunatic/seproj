@@ -90,8 +90,6 @@ class RegisterForm extends Component {
     render() {
         var visibilityState = this.state.usernameerror ? "Username cannot be empty" : "";
         var visibilityState1 = this.state.passworderror ? "Password cannot be blank" : "";
-        var visibilityState2 = this.state.emailerror ? "visible" : "hidden";
-        var visibilityState3 = this.state.schemailerror ? "visible" : "hidden";
         var emailcheck = (this.state.emailerror || this.state.schemailerror);
         var emailstate=""
         if (this.state.emailerror){
@@ -104,26 +102,23 @@ class RegisterForm extends Component {
             <div class="Center">
                 <Card>
                     <CardContent>
-                        <Grid container direction="row" justify="center" >
                             <form noValidate autoComplete="off">
+                            <Grid container direction="column" justify="center" alignItems="center" spacing={3}>
                                 <Grid>
-                                    <img src={Logo} alt="none" />
+                                    <img class="icon" src={Logo} alt="" />
                                 </Grid>
-                                <Grid item xs={12}>
+                                <Grid item xs={6}>
                                     <TextField onChange={this.handleChange} error={this.state.usernameerror} id="username" required  className="input-text" variant="outlined" color="white" label="Username" helperText={visibilityState}/> 
                                 </Grid>
-                                <br />
-                                <Grid item xs={12}>
+                                <Grid item xs={6}>
                                     <TextField onChange={this.handleChange} id="password" error={this.state.passworderror} required variant="outlined" type="password" label="Password" helperText={visibilityState1}/>
                                 </Grid>
-                                <br />
-                                <Grid>
+                                <Grid item xs={6}>
                                     <TextField onChange={this.handleChange} id="email" error={emailcheck} required className="input-text" variant="outlined" color="white" label="Email" helperText={emailstate}/>
                                 </Grid>
-                                <br />
-                                <Grid item xs={12}>
+                                <Grid item xs={6}>
                                     <InputLabel id="label">Hall</InputLabel>
-                                    <Select style={{ width: "100%" }} onChange={this.SelectChange} labelId="label" id="Hall" value={this.state.Hall}>
+                                    <Select style={{width: 200}} onChange={this.SelectChange} labelId="label" id="Hall" value={this.state.Hall}>
                                         <MenuItem value={'1'}>1</MenuItem>
                                         <MenuItem value={'2'}>2</MenuItem>
                                         <MenuItem value={'3'}>3</MenuItem>
@@ -149,21 +144,19 @@ class RegisterForm extends Component {
                                         <MenuItem value={'Tamarid Hall'}>Tamarid Hall</MenuItem>
                                     </Select>
                                 </Grid>
-                                <br />
-                                <Grid>
+                                <Grid item xs={6}>
                                     <Checkbox onChange={this.handleCheck} id='TnC' label='TnC' inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} /> <Link to="">Terms and conditions</Link>
                                 </Grid>
-                                <br /><br />
-                                <Grid container direction="row" justify="center" alignItems="center">
-                                    <Grid xs={6}>
+                                <Grid container direction="row" justify="center" alignItems="center" spacing={4}>
+                                    <Grid item>
                                         <Button disabled={this.state.buttondisabled} color="primary" onClick={this.onSubmit} variant="contained">Register</Button>
                                     </Grid>
-                                    <Grid>
+                                    <Grid item>
                                         <Link className="RemoveHyperlink" to="/"><Button variant="contained">Back</Button></Link>
                                     </Grid>
                                 </Grid>
-                            </form>
-                        </Grid>
+                            </Grid>
+                        </form>
                     </CardContent>
                 </Card>
             </div>

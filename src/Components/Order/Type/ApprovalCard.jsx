@@ -11,10 +11,12 @@ import ApprovalOrder from './ApprovalOrder'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 245,
+    minWidth: 245,
   },
   media: {
     height: 250,
+    minWidth: 245,
   },
 });
 

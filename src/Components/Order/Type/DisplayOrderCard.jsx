@@ -13,14 +13,16 @@ import DeleteOrder from './DeleteOrder';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 245,
+    minWidth: 245,
   },
   media: {
     height: 250,
+    minWidth: 245,
   },
 });
 
-export default function OrderCard(props) {
+export default function DisplayOrderCard(props) {
   const { post } = props
   const classes = useStyles();
   const { route } = props
@@ -28,7 +30,7 @@ export default function OrderCard(props) {
   if (post.OrderConfirm) {
     return (
       <React.Fragment>
-        <Grid item lg={3}>
+        <Grid item lg={3} className="grid-container">
           <Card key={post.Postid} className={classes.root}>
             <CardActionArea>
             <CardMedia key={post.Postid}
@@ -48,9 +50,6 @@ export default function OrderCard(props) {
                 </Typography>
               </CardContent>
             </CardActionArea>
-            <CardActions>
-
-            </CardActions>
           </Card>
         </Grid>
       </React.Fragment>

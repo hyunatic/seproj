@@ -25,7 +25,7 @@ export default function DeliveryStatusCard(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Grid item xs={3}>
+      <Grid item lg={3}>
         <Card key={post.Postid} className={classes.root}>
           <CardActionArea>
             <CardMedia

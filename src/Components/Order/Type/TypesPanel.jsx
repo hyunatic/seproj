@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 //importing icons for categories
 import ViewAgendaIcon from '@material-ui/icons/ViewAgenda';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
-import OrderCard from './OrderCard'
+import DisplayOrderCard from './DisplayOrderCard'
 import ApproveCard from './ApprovalCard'
 
 function TabPanel(props) {
@@ -82,11 +82,10 @@ export default function Order(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Box fontWeight='fontWeightMedium' display='inline'>Orders<br />
-        </Box>
+        <Box fontWeight='fontWeightMedium' display='inline'>Orders</Box>
         <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
           {orderpost && orderpost.map(x => {
-            return (<OrderCard route={route} key={x.OrderId} post={x} />)
+            return (<DisplayOrderCard route={route} key={x.OrderId} post={x} />)
           })}
         </Grid>
       </TabPanel>

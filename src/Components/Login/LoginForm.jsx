@@ -56,31 +56,28 @@ class LoginForm extends Component {
                 <div class="Login">
                     <Card>
                         <CardContent>
-                            <Grid container direction="row" justify="center" alignItems="center">
                                 <form noValidate autoComplete="off">
+                                <Grid container direction="column" justify="center" alignItems="center" spacing={3}>
                                     <Grid>
-                                        <img src={Logo} alt="" />
+                                        <img class="icon" src={Logo} alt="" />
                                     </Grid>
-                                    <Grid item xs={12}>
-                                        <TextField onChange={this.handleChange} onKeyDown={this.checkKey} id="username" className="input-text" variant="outlined" color="white" label="Username" />
+                                    <Grid item xs={6}>
+                                        <TextField onChange={this.handleChange} error={this.state.error } onKeyDown={this.checkKey} id="username" className="input-text" variant="outlined" color="white" label="Username" />
                                     </Grid>
-                                    <br />
-                                    <Grid item xs={12}>
-                                        <TextField onChange={this.handleChange} onKeyDown={this.checkKey} id="password" variant="outlined" type="password" label="Password" />
+                                    <Grid item xs={6}>
+                                        <TextField onChange={this.handleChange} error={this.state.error } onKeyDown={this.checkKey} id="password" variant="outlined" type="password" label="Password" />
                                     </Grid>
-                                    <br />
                                     <p style={{ visibility: visibilityState, color: "red" }}>Wrong Username or Password</p>
-                                    <Grid container item alignitem="center" justify="center">
-                                        <Grid xs={6}>
+                                    <Grid container alignitem="center" justify="center" direction="row" spacing={4}>
+                                        <Grid item>
                                             <Button onClick={this.onSubmit} variant="contained" color="primary">Login</Button>
                                         </Grid>
                                     </Grid>
-                                    <br /><br />
                                     <Grid container item alignitem="center" justify="center">
                                         <p>Forget Password</p>
                                     </Grid>
-                                </form>
-                            </Grid>
+                                </Grid>
+                            </form>
                         </CardContent>
                     </Card>
                 </div>

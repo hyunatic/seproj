@@ -5,14 +5,15 @@
     margin: auto;
 }
 .Login{
-    width: 30%;
+    max-width: 20%;
+    min-width: fit-content;
     height: fit-content;
     margin-top:5%;
     margin-left:auto;
     margin-right: auto;
 }
 .Bottom{
-    width: 30%;
+    max-width: 20%;
     height: fit-content;
     margin-top:1%;
     margin-left:auto;
@@ -25,8 +26,7 @@
     text-decoration: none;
     color: dodgerblue;
 }
-img{
-    max-width: 100%;
+.icon{
+    max-width : 100%;
     height: auto;
-    padding-bottom: 10%;
 }
