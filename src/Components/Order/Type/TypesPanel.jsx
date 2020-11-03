@@ -10,8 +10,11 @@ import Grid from '@material-ui/core/Grid';
 //importing icons for categories
 import ViewAgendaIcon from '@material-ui/icons/ViewAgenda';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import RefreshIcon from '@material-ui/icons/Refresh';
 import DisplayOrderCard from './DisplayOrderCard'
 import ApproveCard from './ApprovalCard'
+import Button from '@material-ui/core/Button'
 
 function TabPanel(props) {
   const { children, value, index, donationposts, ...other } = props;
@@ -64,6 +67,9 @@ export default function Order(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const Refresh = () => {
+    props.route("order")
+  }
 
   return (
     <div className={classes.root}>
@@ -78,13 +84,15 @@ export default function Order(props) {
           aria-label="scrollable force tabs example"
         >
           <Tab label="My Orders" icon={<ViewAgendaIcon />} {...a11yProps(0)} />
-          <Tab label="Confirmed Orders" icon={<ViewAgendaIcon />} {...a11yProps(1)} />
+          <Tab label="Confirmed Orders" icon={<AssignmentIcon />} {...a11yProps(1)} />
           <Tab label="Approvals" icon={<CheckCircleOutlineIcon />} {...a11yProps(2)} />
+          <Button onClick={Refresh} variant="contained" color="white"><RefreshIcon /></Button>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         <Box fontWeight='fontWeightMedium' display='inline'>Pending Orders</Box>
         <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
+  
           {orderpost && orderpost.filter(x => x.OrderConfirm === false).map(x => {
             return (<DisplayOrderCard route={route} key={x.OrderId} post={x} />)
           })}
