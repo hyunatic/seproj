@@ -76,8 +76,9 @@ class PlaceOrderForm extends Component {
         return (
             <div>
                 <PrimarySearchAppBar />
-                <Grid container direction="column" justify="center" alignItems="center">
-                <Grid item> <h2>Order Details</h2></Grid>
+
+                <Grid container direction="column" justify="center" alignItems="center" className='Padding'>
+                   
                 <Grid container direction="row" justify="center" alignItems="center" spacing ={3}>
                     <Grid item>
                         {posts && posts.filter(x => x.Postid === id).map(x => {
@@ -87,6 +88,7 @@ class PlaceOrderForm extends Component {
                     <Grid item>
                         <Card>
                             <CardContent>
+                            <Grid item> <h2>Order Details</h2></Grid>
                                     <form noValidate autoComplete="off">
                                     <Grid container direction="column" justify="left" alignItems="left" spacing={3} >
                                         <Grid item>
@@ -114,7 +116,7 @@ class PlaceOrderForm extends Component {
                     </Grid>
                     {googleMap}
                 </Grid>
-                </Grid>
+            </Grid>  
             </div>
         )
     }
