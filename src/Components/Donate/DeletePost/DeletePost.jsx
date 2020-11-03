@@ -62,7 +62,7 @@ class DeletePost extends Component {
                                         <img src={"data:image/jpeg;base64," + x.ImageId} alt="" />
                                     </Grid>
                                     <form noValidate autoComplete="off">
-                                        <Grid container direction="column" justify="left" alignContent="left" spacing={2}>
+                                        <Grid container direction="column" justify="center" alignContent="center" spacing={2}>
                                             <Grid item >
                                                 <TextField  id="itemname" disabled variant="outlined" color="white" label="Item name" value={x.ItemName} />
                                             </Grid>
@@ -73,7 +73,7 @@ class DeletePost extends Component {
                                                 <TextField  id="category" variant="outlined" disabled value={x.Category} color="white" label="Category" />
                                             </Grid>
                                         </Grid>
-                                        <Grid container direction="row" spacing={4}>
+                                        <Grid container direction="row"  justify="center" alignContent="center" spacing={4}>
                                             <Grid item>
                                                 <Button color="primary" onClick={() => this.DeletePost(x.Postid)} variant="contained">Delete</Button>
                                             </Grid>
