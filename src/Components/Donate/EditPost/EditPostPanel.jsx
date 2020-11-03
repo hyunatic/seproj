@@ -82,7 +82,7 @@ export default function EditPostPanel(props) {
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0}>
-                <Box fontWeight='fontWeightMedium' display='inline'>My Posting<br />
+                <Box fontWeight='fontWeightMedium' display='inline'>My Posts<br />
                 </Box>
                 <Grid container direction="row" justify="space-around" alignItems="center">
                     {posts && posts.filter(x => x.Username === user).map(x => {

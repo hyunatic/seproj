@@ -52,43 +52,36 @@ class DeletePost extends Component {
                     </Grid>
                 </div>
                 <br></br>
-                <Box fontWeight='fontWeightMedium' display='inline'>Confirm Delete</Box>
                 {currentPost && currentPost.map(x => {
                     return (
-                        <Card key={x.Postid}>
-                            <CardContent>
-                                <Grid container direction="row" justify="center" alignItems="center">
-                                    <Grid>
+                        <Card className="cardsize" key={x.Postid}>
+                            <CardContent>   
+                                <Grid container spacing={2} direction="column" justify="center" alignContent="center">
+                                    <Grid item><h2>Delete Post</h2></Grid>
+                                    <Grid item>
                                         <img src={"data:image/jpeg;base64," + x.ImageId} alt="" />
                                     </Grid>
-                                </Grid>
-                                <Grid item xs={12} sm container>
-                                    <Grid item xs container direction="column">
                                     <form noValidate autoComplete="off">
-                                        <Grid item xs>
-                                            <TextField fullWidth id="itemname" disabled variant="outlined" color="white" label="Item name" value={x.ItemName} />
-                                        </Grid>
-                                        <br />
-                                        <Grid item xs>
-                                            <TextField fullWidth multiline rows={4} disabled id="description" variant="outlined" color="white" label="Description" value={x.Description} />
-                                        </Grid>
-                                        <br />
-                                        <Grid container direction="row">
-                                            <Grid item xs={4}>
-                                                <TextField fullWidth id="category" variant="outlined" disabled value={x.Category} color="white" label="Category" />
+                                        <Grid container direction="column" justify="left" alignContent="left" spacing={2}>
+                                            <Grid item >
+                                                <TextField  id="itemname" disabled variant="outlined" color="white" label="Item name" value={x.ItemName} />
+                                            </Grid>
+                                            <Grid item >
+                                                <TextField  multiline rows={4} disabled id="description" variant="outlined" color="white" label="Description" value={x.Description} />
+                                            </Grid>
+                                            <Grid item>
+                                                <TextField  id="category" variant="outlined" disabled value={x.Category} color="white" label="Category" />
                                             </Grid>
                                         </Grid>
-                                        <br />
-                                        <Grid container direction="row">
-                                            <Grid xs={3}>
+                                        <Grid container direction="row" spacing={4}>
+                                            <Grid item>
                                                 <Button color="primary" onClick={() => this.DeletePost(x.Postid)} variant="contained">Delete</Button>
                                             </Grid>
-                                            <Grid >
+                                            <Grid item>
                                                 <Link className="RemoveHyperlink" to="/editpost"><Button color="primary" variant="contained">Cancel</Button></Link>
                                             </Grid>
                                         </Grid>
                                     </form>
-                                    </Grid>
                                 </Grid>
                             </CardContent>
                         </Card>

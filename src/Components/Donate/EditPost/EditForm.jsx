@@ -55,11 +55,11 @@ class EditForm extends Component {
           </Grid>
         </div>
         <br></br>
-        <Box fontWeight='fontWeightMedium' display='inline'>Post Edit</Box>
         {currentPost && currentPost.map(x => {
           return (
             <Card key={x.Postid}>
               <CardContent>
+                <Grid><h2>Edit Post</h2></Grid>
                 <Grid container direction="row" justify="center" alignItems="center">
                   <Grid>
                     <img src={"data:image/jpeg;base64," + x.ImageId} alt="" />

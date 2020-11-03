@@ -82,6 +82,9 @@ class Donate extends Component {
                         <CardContent>
                             <Grid>
                                 <form noValidate autoComplete="off">
+                                    <Grid>
+                                        <h2>Create Donation</h2>
+                                    </Grid>
                                     <Grid >
                                         <TextField fullWidth onChange={this.handleChange} id="itemname" variant="outlined" color="white" label="Item name" />
                                     </Grid>

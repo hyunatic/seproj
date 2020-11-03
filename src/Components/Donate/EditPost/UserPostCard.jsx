@@ -17,6 +17,10 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
+  removeHyperlink: {
+    textDecoration: 'none',
+    color: 'dodgerblue',
+  },
 });
 
 export default function UserPostCard(props) {
@@ -42,12 +46,12 @@ export default function UserPostCard(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Link to={"/editform/" + post.Postid}>
+            <Link className={classes.removeHyperlink} to={"/editform/" + post.Postid}>
               <Button size="small" color="primary">
                 Edit
           </Button>
             </Link>
-            <Link to={"/deletePost/" + post.Postid}>
+            <Link className={classes.removeHyperlink} to={"/deletePost/" + post.Postid}>
               <Button size="small" color="primary">
                 Delete
           </Button>
