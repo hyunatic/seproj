@@ -101,7 +101,6 @@ export default function CategoryTab(props) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Box margin-marginBottom={2} fontWeight='fontWeightMedium' display='inline'>Women's fashion</Box>
-        <CircularProgress />
         <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
           {donationposts && donationposts.filter(x => x.Category === "1").map(x => {
             return(<ReviewCard post={x} />)

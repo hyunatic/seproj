@@ -77,8 +77,8 @@ export default function Order(props) {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          <Tab label="Pending Orders" icon={<ViewAgendaIcon />} {...a11yProps(0)} />
-          <Tab label="Approved Orders" icon={<ViewAgendaIcon />} {...a11yProps(1)} />
+          <Tab label="My Orders" icon={<ViewAgendaIcon />} {...a11yProps(0)} />
+          <Tab label="Confirmed Orders" icon={<ViewAgendaIcon />} {...a11yProps(1)} />
           <Tab label="Approvals" icon={<CheckCircleOutlineIcon />} {...a11yProps(2)} />
         </Tabs>
       </AppBar>
@@ -91,9 +91,9 @@ export default function Order(props) {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Box fontWeight='fontWeightMedium' display='inline'>Approved Orders</Box>
+        <Box fontWeight='fontWeightMedium' display='inline'>Confirmed Orders</Box>
         <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
-          {orderpost && orderpost.filter(x => x.OrderConfirm === true).map(x => {
+          {orderpost && orderpost.filter(x => x.OrderConfirm === true).map( x => {
             return (<DisplayOrderCard route={route} key={x.OrderId} post={x} />)
           })}
         </Grid>
