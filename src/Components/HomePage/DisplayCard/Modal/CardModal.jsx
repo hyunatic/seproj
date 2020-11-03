@@ -60,7 +60,7 @@ export default function CardModal(props) {
                 <Fade in={open}>
                     <Card>
                         <CardContent>
-                            <Grid container sm={12}>
+                            <Grid container direction="row" sm={12} spacing={1}>
                                 <Grid item xs={6}>
                                     <img src={"data:image/jpeg;base64," + post.ImageId } alt=""/>
                                 </Grid>

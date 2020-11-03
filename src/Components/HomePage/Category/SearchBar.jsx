@@ -64,7 +64,7 @@ class SearchBar extends Component {
                     <Grid item md={2}>
                         <Button onClick={this.onSubmit} style={{ width: "100%" }} variant="contained" color="primary">Search</Button>
                     </Grid>
-                    <Grid container direction="row" justify="space-around" alignItems="center">
+                    <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
                         {search && search.map(x => {
                             return (<ReviewCard key={x.Postid} post={x} />)
                         })}

@@ -84,7 +84,7 @@ export default function Order(props) {
       <TabPanel value={value} index={0}>
         <Box fontWeight='fontWeightMedium' display='inline'>Orders<br />
         </Box>
-        <Grid container direction="row" justify="space-around" alignItems="center">
+        <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
           {orderpost && orderpost.map(x => {
             return (<OrderCard route={route} key={x.OrderId} post={x} />)
           })}
@@ -92,7 +92,7 @@ export default function Order(props) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
-        <Grid container direction="row" justify="space-around" alignItems="center">
+        <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
           {approvalposts && approvalposts.map(x => {
             return (<ApproveCard route={route} key={x.OrderId} post={x} />)
           })}

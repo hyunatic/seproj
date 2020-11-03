@@ -84,7 +84,7 @@ export default function EditPostPanel(props) {
             <TabPanel value={value} index={0}>
                 <Box fontWeight='fontWeightMedium' display='inline'>My Posts<br />
                 </Box>
-                <Grid container direction="row" justify="space-around" alignItems="center">
+                <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
                     {posts && posts.filter(x => x.Username === user).map(x => {
                         return (<UserPostCard key={x.Postid} post={x} />)
                     })}
@@ -92,7 +92,7 @@ export default function EditPostPanel(props) {
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <Box fontWeight='fontWeightMedium' display='inline'>Delivery Status</Box>
-                <Grid container direction="row" justify="space-around" alignItems="center">
+                <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
                 {approvalposts && approvalposts.map(x => {
                         return (<DeliveryStatusCard key={x.Postid} post={x} />)
                     })}

@@ -8,3 +8,14 @@
 p{
     margin-top: 2em;
 }
+img{
+    width: auto;
+    height: 250px;
+    padding-bottom: 10%;
+}
+.cardsize {
+    width: fit-content;
+    align-content: center;
+    margin: auto;
+    justify-content: center;
+}

@@ -57,36 +57,32 @@ class EditForm extends Component {
         <br></br>
         {currentPost && currentPost.map(x => {
           return (
-            <Card key={x.Postid}>
+            <Card key={x.Postid} className="cardsize">
               <CardContent>
-                <Grid><h2>Edit Post</h2></Grid>
-                <Grid container direction="row" justify="center" alignItems="center">
-                  <Grid>
+                <Grid container direction="column" justify="center" alignItems="center">
+                <Grid item><h2>Edit Post</h2></Grid>
+                  <Grid item>
                     <img src={"data:image/jpeg;base64," + x.ImageId} alt="" />
                   </Grid>
-                </Grid>
-                <Grid item xs={12} sm container>
-                  <Grid item xs container direction="column">
                     <form noValidate autoComplete="off">
-                      <Grid item xs>
+                    <Grid container direction="column" justify="left" alignContent="left" spacing={2}>
+                      <Grid item>
                         <TextField fullWidth id="itemname" variant="outlined" onChange={this.handleChange} color="white" label="Item name" value={this.state.itemname} />
                       </Grid>
-                      <br />
-                      <Grid item xs>
+                      <Grid item>
                         <TextField fullWidth multiline rows={4} id="description" onChange={this.handleChange} variant="outlined" color="white" label="Description" value={this.state.description} />
                       </Grid>
-                      <br />
-                      <Grid container direction="row">
-                        <Grid xs={3}>
+                    </Grid>
+                      <Grid container direction="row" spacing ={4}>
+                        <Grid item>
                           <Button color="primary" onClick={() => this.UpdatePost(x.Postid)} variant="contained">Update</Button>
                         </Grid>
-                        <Grid >
+                        <Grid item>
                           <Link className="RemoveHyperlink" to="/editpost"><Button color="primary" variant="contained">Cancel</Button></Link>
                         </Grid>
                       </Grid>
                     </form>
                   </Grid>
-                </Grid>
               </CardContent>
             </Card>
           )

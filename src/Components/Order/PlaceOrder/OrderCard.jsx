@@ -12,10 +12,11 @@ import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: 300,
   },
   media: {
     height: 250,
+    width: 'auto',
   },
 });
 
@@ -24,7 +25,7 @@ export default function OrderCard(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Grid className="grid-container">
+      <Grid>
         <Card key={post.Postid} className={classes.root}>
           <CardActionArea>
             <CardMedia

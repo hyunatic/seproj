@@ -76,46 +76,44 @@ class PlaceOrderForm extends Component {
         return (
             <div>
                 <PrimarySearchAppBar />
-                <br></br>
-                <Box fontWeight='fontWeightMedium' display='inline'>My Order</Box>
-                <Grid container direction="row" justify="center" alignItems="start" className="grid-container">
-                    <Grid item xs={3}>
+                <Grid container direction="column" justify="center" alignItems="center">
+                <Grid item> <h2>Order Details</h2></Grid>
+                <Grid container direction="row" justify="center" alignItems="center" spacing ={3}>
+                    <Grid item>
                         {posts && posts.filter(x => x.Postid === id).map(x => {
                             return (<OrderCard key={x.Postid} post={x} />)
                         })}
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item>
                         <Card>
                             <CardContent>
-                                <Grid>
                                     <form noValidate autoComplete="off">
-                                        <Grid >
-                                            <TextField fullWidth id="deliveryaddress" disabled variant="outlined" color="white" label="Collection Address" value={addr}/>
+                                    <Grid container direction="column" justify="left" alignItems="left" spacing={3} >
+                                        <Grid item>
+                                            <TextField id="deliveryaddress" disabled variant="outlined" color="white" label="Collection Address" value={addr}/>
                                         </Grid>
-                                        <br />
-                                        <Grid >
+                                        <Grid item>
                                             <InputLabel id="label">Moving Service</InputLabel>
                                             <Select style={{ width: "100%" }} onChange={this.SelectChange} labelId="label" id="movingService" value={this.state.MovingService}>
                                                 <MenuItem value={'False'}>No</MenuItem>
                                                 <MenuItem value={'True'}>Yes</MenuItem>
                                             </Select>
                                         </Grid>
-                                        <br />
-                                        <Grid container direction="row" >
-                                            <Grid xs={3}>
+                                        <Grid container direction="row" spacing={4} >
+                                            <Grid item>
                                                 <Button color="primary" onClick={() => this.onSubmit(posts.filter(x => x.Postid === id))} variant="contained">Place Order</Button>
                                             </Grid>
-
-                                            <Grid >
+                                            <Grid item>
                                                 <Link className="RemoveHyperlink" to="/home"><Button color="primary" variant="contained">Back</Button></Link>
                                             </Grid>
                                         </Grid>
+                                    </Grid>
                                     </form>
-                                </Grid>
                             </CardContent>
                         </Card>
                     </Grid>
                     {googleMap}
+                </Grid>
                 </Grid>
             </div>
         )
