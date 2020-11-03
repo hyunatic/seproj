@@ -54,19 +54,21 @@ class Profile extends Component {
         return (
             <div>
                 <Card>
-                    <Grid container>
                         <Grid xs={12}>
                             <Appbar />
                         </Grid>
                         <br />
-                        <Grid container xs={12} class="grid-container" container justify="center" alignItems="center">
-                            <Grid>
+                        <Grid container justify="center" alignItems="center" xs={6} className="grid-container">
+                        <Grid container xs={12} spacing={2}>
+                            <Grid item sm={6}>
                                 <TextField onChange={this.handleChange} id="username" className="input-text" variant="outlined" color="white" disabled value={this.state.username} label="username" />
                             </Grid>
-                            <Grid>
+                            <Grid item sm={6}>
                                 <TextField onChange={this.handleChange} id="email" disabled value={this.state.email} variant="outlined" label="email" />
                             </Grid>
-                            <Grid>
+                        </Grid>
+                        <Grid container xs={12} spacing={2}>
+                            <Grid item sm={6}>
                                 Hall :
                             <Select labelId="HallNumber" id="Hall" value={this.state.Hall} onChange={this.SelectChange}>
                                     <MenuItem value={'1'}>1</MenuItem>
@@ -94,17 +96,14 @@ class Profile extends Component {
                                     <MenuItem value={'Tamarind Hall'}>Tamarind Hall</MenuItem>
                                 </Select>
                             </Grid>
-                            <Grid>
+                            <Grid item sm={6}>
                                 <Button onClick={this.onSubmit} variant="contained" color="primary"> Confirm Changes </Button>
                             </Grid>
-                            <Grid>
-                                <Button variant="contained" color="primary"> Cancel Changes </Button>
-                            </Grid>
-                            <Grid>
+                            <Grid item >
                                 <p style={{ visibility: visibilityState, color: "red" }}>Profile Updated</p>
                             </Grid>
                         </Grid>
-                    </Grid>
+                        </Grid>
                 </Card>
             </div>
         )
