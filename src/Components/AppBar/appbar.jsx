@@ -167,7 +167,7 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static" style={{ backgroundColor: '#232F34' }} >
         <Toolbar>
-          <Link className ="removeHyperlinkHome" link to="/home"><Typography className={classes.title} variant="h6" noWrap>
+          <Link className ="removeHyperlinkHome" link to="/home"><Typography  variant="h6" noWrap>
             Unwanted
           </Typography></Link>
           <div className={classes.search}>
