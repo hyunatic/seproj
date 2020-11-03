@@ -78,7 +78,8 @@ export default function Order(props) {
           aria-label="scrollable force tabs example"
         >
           <Tab label="My Orders" icon={<ViewAgendaIcon />} {...a11yProps(0)} />
-          <Tab label="Approvals" icon={<CheckCircleOutlineIcon />} {...a11yProps(1)} />
+          <Tab label="Confirmed Orders" icon={<ViewAgendaIcon />} {...a11yProps(1)} />
+          <Tab label="Approvals" icon={<CheckCircleOutlineIcon />} {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -90,6 +91,14 @@ export default function Order(props) {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
+        <Box fontWeight='fontWeightMedium' display='inline'>Confirmed Orders</Box>
+        <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
+          {orderpost && orderpost.filter(x => x.OrderConfirm === true).map( x => {
+            return (<DisplayOrderCard route={route} key={x.OrderId} post={x} />)
+          })}
+        </Grid>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
         <Box fontWeight='fontWeightMedium' display='inline'>Approvals</Box>
         <Grid container direction="row" justify="left" alignItems="left" spacing ={3} style={{paddingLeft: '2%'}}>
           {approvalposts && approvalposts.map(x => {

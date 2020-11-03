@@ -47,8 +47,8 @@ export default function ReviewCard(props) {
           </CardActionArea>
           <CardActions>
             <CardModal post={post} />
-            <Link to={ "placeOrder/" + post.Postid }>
-              <Button className="removeHyperlink" size="small" color="primary">
+            <Link className="removeHyperlink" to={ "placeOrder/" + post.Postid }>
+              <Button size="small" color="primary">
                 Get
           </Button>
             </Link>
